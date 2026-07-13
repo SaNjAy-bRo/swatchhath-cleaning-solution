@@ -1,0 +1,86 @@
+"use client";
+
+import { Phone, CheckCircle } from "lucide-react";
+
+export default function Navbar() {
+  const whatsappNumber = "+919481977717";
+  const whatsappMessage = encodeURIComponent(
+    "Hi Swachhath Cleaning Solution, I would like to get a quote for cleaning services."
+  );
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const phoneCallLink = `tel:${whatsappNumber}`;
+
+  return (
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo / Brand Name */}
+          <div className="flex flex-col justify-center">
+            <a href="#" className="flex items-center space-x-2">
+              <span className="bg-primary text-white p-1.5 rounded-lg font-bold flex items-center justify-center">
+                <CheckCircle className="h-5 w-5" />
+              </span>
+              <div className="flex flex-col">
+                <span className="font-heading text-lg font-extrabold tracking-tight text-slate-900 leading-none">
+                  SWACHHATH
+                </span>
+                <span className="text-xs font-semibold text-primary tracking-widest uppercase mt-0.5">
+                  Cleaning Solution
+                </span>
+              </div>
+            </a>
+          </div>
+
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex space-x-8 items-center">
+            <a href="#services" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+              Services
+            </a>
+            <a href="#about" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+              Why Us
+            </a>
+            <a href="#reviews" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+              Reviews
+            </a>
+            <a href="#contact" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+              Get a Quote
+            </a>
+          </div>
+
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a
+              href={phoneCallLink}
+              className="flex items-center text-sm font-semibold text-slate-700 hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-slate-50"
+            >
+              <Phone className="h-4 w-4 mr-2 text-primary" />
+              +91 94819 77717
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm hover:shadow transition-all duration-200"
+            >
+              <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.75.002-2.605-1.002-5.054-2.829-6.88-1.827-1.827-4.26-2.83-6.875-2.83-5.448 0-9.873 4.37-9.876 9.75-.001 1.833.466 3.626 1.353 5.197l-.995 3.637 3.735-.975zm11.367-7.384c-.3-.15-1.772-.875-2.046-.975-.276-.1-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.487-.893-.797-1.496-1.783-1.67-2.083-.175-.3-.018-.463.13-.61.134-.133.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525c-.075-.15-.676-1.625-.926-2.225-.244-.589-.493-.51-.676-.519-.174-.009-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.112 4.521.714.308 1.272.492 1.707.63.717.228 1.368.196 1.883.118.574-.088 1.772-.724 2.022-1.424.25-.7.25-1.3 0-1.425-.075-.125-.275-.2-.575-.35z" />
+              </svg>
+              Quick Chat
+            </a>
+          </div>
+
+          {/* Mobile phone icon - Replacing hamburger menu button */}
+          <div className="md:hidden flex items-center">
+            <a
+              href={phoneCallLink}
+              className="inline-flex items-center justify-center p-2 rounded-lg text-primary bg-primary-light border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer shadow-3xs"
+              aria-label="Call Us"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}

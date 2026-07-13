@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --primary-light: #ccfbf1;
+  
+  --secondary: #0284c7;
+  --secondary-hover: #0369a1;
+  --secondary-light: #e0f2fe;
+
+  --accent: #22c55e;
+  --accent-light: #dcfce7;
+  
+  --card: #f8fafc;
+  --border: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-light: var(--secondary-light);
+
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  
+  --color-card-bg: var(--card);
+  --color-border-custom: var(--border);
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+}
+
+/* Custom Base Styles */
+html {
+  font-size: 16.5px; /* Subtle size boost on mobile */
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 645px) {
+  html {
+    font-size: 17px; /* Subtle size boost on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 17.5px; /* Subtle size boost on desktop */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom styles for compact sections */
+.section-compact {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-compact {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
