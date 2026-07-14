@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, MapPin, CheckCircle2, MessageSquare } from "lucide-react";
 
-export default function ContactForm() {
+export default function ContactForm({ defaultService = "" }: { defaultService?: string }) {
   const servicesList = [
     "High Pressure Wash Cleaning",
     "Flat & House Cleaning",
@@ -22,7 +22,13 @@ export default function ContactForm() {
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
+  const [service, setService] = useState(defaultService);
+
+  useEffect(() => {
+    if (defaultService) {
+      setService(defaultService);
+    }
+  }, [defaultService]);
   const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
