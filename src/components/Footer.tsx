@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,10 +11,14 @@ export default function Footer() {
           
           {/* Logo & Sub */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center space-x-2 text-white">
-              <span className="bg-primary p-1 rounded-md text-white">
-                <CheckCircle className="h-4.5 w-4.5" />
-              </span>
+            <div className="flex items-center space-x-2.5 text-white">
+              <Image
+                src="/images/logo.png"
+                alt="Swachhath Logo"
+                width={36}
+                height={36}
+                className="object-contain bg-white p-0.5 rounded-lg"
+              />
               <span className="font-heading text-base font-extrabold tracking-tight">
                 SWACHHATH CLEANING SOLUTION
               </span>

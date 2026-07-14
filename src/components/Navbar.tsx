@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Phone, 
   CheckCircle, 
@@ -50,10 +51,15 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo / Brand Name */}
           <div className="flex flex-col justify-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="bg-primary text-white p-1.5 rounded-lg font-bold flex items-center justify-center">
-                <CheckCircle className="h-5 w-5" />
-              </span>
+            <Link href="/" className="flex items-center space-x-2.5">
+              <Image
+                src="/images/logo.png"
+                alt="Swachhath Logo"
+                width={40}
+                height={40}
+                priority
+                className="object-contain"
+              />
               <div className="flex flex-col">
                 <span className="font-heading text-lg font-extrabold tracking-tight text-slate-900 leading-none">
                   SWACHHATH
