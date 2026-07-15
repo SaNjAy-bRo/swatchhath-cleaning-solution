@@ -1,4 +1,4 @@
-import { Star, ShieldCheck, Leaf, Phone, Droplets } from "lucide-react";
+import { Star, ShieldCheck, Leaf, Phone, Droplets, MapPin } from "lucide-react";
 
 export default function Hero() {
   const whatsappNumber = "+919481977717";
@@ -36,23 +36,23 @@ export default function Hero() {
               For <span className="text-secondary">Home & Business</span>
             </h1>
 
-            <p className="text-base text-slate-300 max-w-md leading-relaxed">
-              Professional pressure washing, tank sanitization, solar panel care, and complete home cleaning — trusted across coastal Karnataka since 2022.
-            </p>
-
-            {/* Trust badges */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <div className="flex items-center space-x-2 bg-white/10 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm">
-                <ShieldCheck className="h-4 w-4 text-secondary shrink-0" />
-                <span className="text-xs text-white font-bold">Verified Professionals</span>
+            {/* Trust badges - 2x2 grid type readable badges */}
+            <div className="grid grid-cols-2 gap-3 w-full pt-2 max-w-lg">
+              <div className="flex items-center space-x-2.5 bg-white/10 border border-white/10 p-3 rounded-xl backdrop-blur-xs hover:bg-white/15 transition-colors">
+                <ShieldCheck className="h-5 w-5 text-secondary shrink-0" />
+                <span className="text-[11px] sm:text-xs text-white font-extrabold leading-tight text-left">Verified Professionals</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/10 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm">
-                <Leaf className="h-4 w-4 text-emerald-400 shrink-0" />
-                <span className="text-xs text-white font-bold">Eco-Friendly Products</span>
+              <div className="flex items-center space-x-2.5 bg-white/10 border border-white/10 p-3 rounded-xl backdrop-blur-xs hover:bg-white/15 transition-colors">
+                <Leaf className="h-5 w-5 text-emerald-400 shrink-0" />
+                <span className="text-[11px] sm:text-xs text-white font-extrabold leading-tight text-left">Eco-Friendly Products</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/10 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm">
-                <Star className="h-4 w-4 text-amber-400 fill-amber-400 shrink-0" />
-                <span className="text-xs text-white font-bold">4.9 Rated</span>
+              <div className="flex items-center space-x-2.5 bg-white/10 border border-white/10 p-3 rounded-xl backdrop-blur-xs hover:bg-white/15 transition-colors">
+                <Star className="h-5 w-5 text-amber-400 fill-amber-400 shrink-0" />
+                <span className="text-[11px] sm:text-xs text-white font-extrabold leading-tight text-left">4.9 Rated (500+ Reviews)</span>
+              </div>
+              <div className="flex items-center space-x-2.5 bg-white/10 border border-white/10 p-3 rounded-xl backdrop-blur-xs hover:bg-white/15 transition-colors">
+                <MapPin className="h-5 w-5 text-secondary shrink-0" />
+                <span className="text-[11px] sm:text-xs text-white font-extrabold leading-tight text-left">Local Karnataka Crew</span>
               </div>
             </div>
 
