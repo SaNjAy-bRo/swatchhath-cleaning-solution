@@ -82,9 +82,6 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
               <h2 className="font-heading text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                 Request a Free Quote
               </h2>
-              <p className="text-base text-slate-600 mt-2 leading-relaxed">
-                Fill out the form or chat directly with us on WhatsApp to get pricing details for your specific location.
-              </p>
             </div>
 
             {/* Kannada / Localized Notice Banner */}

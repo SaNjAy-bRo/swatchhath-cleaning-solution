@@ -17,7 +17,9 @@ import {
   Layers, 
   Activity, 
   Heart, 
-  Building2 
+  Building2,
+  Menu,
+  X
 } from "lucide-react";
 import { servicesList } from "../data/servicesData";
 
@@ -37,6 +39,7 @@ const iconMap: Record<string, any> = {
 
 export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const whatsappNumber = "+919481977717";
   const whatsappMessage = encodeURIComponent(
@@ -139,8 +142,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile phone icon - Direct call link */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile phone icon & Menu toggle button */}
+          <div className="md:hidden flex items-center space-x-2">
             <a
               href={phoneCallLink}
               className="inline-flex items-center justify-center p-2 rounded-lg text-primary bg-primary-light border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer shadow-3xs"
@@ -148,9 +151,97 @@ export default function Navbar() {
             >
               <Phone className="h-5 w-5" />
             </a>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer shadow-3xs"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile drawer panel */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-slate-100 bg-white shadow-lg animate-fadeIn">
+          <div className="px-6 py-4 space-y-4">
+            {/* Navigation links */}
+            <div className="flex flex-col space-y-3">
+              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
+                Navigation
+              </span>
+              <Link
+                href="/#about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-bold text-slate-700 hover:text-primary transition-colors block"
+              >
+                Why Us
+              </Link>
+              <Link
+                href="/#reviews"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-bold text-slate-700 hover:text-primary transition-colors block"
+              >
+                Reviews
+              </Link>
+              <Link
+                href="/#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-bold text-slate-700 hover:text-primary transition-colors block"
+              >
+                Get a Quote
+              </Link>
+            </div>
+
+            {/* Services list with scrolling */}
+            <div className="flex flex-col space-y-3 pt-3 border-t border-slate-100">
+              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
+                Our Services
+              </span>
+              <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto pr-1">
+                {servicesList.map((service) => {
+                  const Icon = iconMap[service.iconName] || Sparkles;
+                  return (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center space-x-2.5 p-2 rounded-lg hover:bg-slate-50 transition-colors"
+                    >
+                      <div className="p-1 bg-slate-100 text-slate-500 rounded-md">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <span className="text-xs font-bold text-slate-800 truncate">
+                        {service.name}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Direct contact CTAs */}
+            <div className="flex items-center gap-2 pt-3 border-t border-slate-100">
+              <a
+                href={phoneCallLink}
+                className="flex-1 inline-flex items-center justify-center px-4 py-2.5 text-xs font-extrabold text-slate-750 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+              >
+                <Phone className="h-4 w-4 mr-1.5 text-primary" />
+                Call Us
+              </a>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center px-4 py-2.5 text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-xs transition-colors"
+              >
+                Quick Chat
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
