@@ -57,7 +57,6 @@ export default function Feedback() {
       });
 
       if (res.ok) {
-        // Add new review to local state list for display
         setReviews([
           {
             name,
@@ -90,22 +89,22 @@ export default function Feedback() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
-            <span className="text-xs font-extrabold text-primary tracking-widest uppercase block mb-1">
+            <span className="text-xs font-extrabold text-secondary tracking-[0.2em] uppercase block mb-2">
               Testimonials
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
               What Our Customers Say
             </h2>
-            <p className="text-sm text-slate-600 mt-1">
-              Real reviews from real home and business owners in Coastal Karnataka.
+            <p className="text-base text-slate-600 mt-2">
+              Real reviews from home and business owners in Coastal Karnataka.
             </p>
           </div>
           
           <button
             onClick={() => setFormOpen(!formOpen)}
-            className="mt-3 sm:mt-0 inline-flex items-center text-sm font-bold bg-white text-primary border border-primary/20 hover:border-primary px-3.5 py-2.5 rounded-lg hover:bg-slate-50 cursor-pointer transition-all shrink-0 w-fit"
+            className="inline-flex items-center justify-center text-sm font-extrabold bg-white text-primary border border-primary/20 hover:border-primary px-4.5 py-3 rounded-xl hover:bg-slate-50 cursor-pointer transition-all shadow-3xs hover:shadow-2xs shrink-0 w-fit"
           >
             <MessageSquarePlus className="h-4.5 w-4.5 mr-2" />
             Write a Review
@@ -114,52 +113,52 @@ export default function Feedback() {
 
         {/* Feedback Expandable Form */}
         {formOpen && (
-          <div className="mb-6 bg-white border border-slate-150 p-4 rounded-xl shadow-xs max-w-xl animate-fadeIn">
-            <h3 className="text-sm font-extrabold text-slate-900 mb-3">Share Your Experience</h3>
+          <div className="mb-8 bg-white border border-slate-150 p-6 rounded-2xl shadow-sm max-w-xl animate-fadeInUp">
+            <h3 className="text-base font-extrabold text-slate-900 mb-4">Share Your Experience</h3>
             
             {success ? (
-              <div className="flex items-center space-x-2 text-emerald-600 bg-emerald-50 border border-emerald-100 p-3 rounded-lg text-xs font-semibold">
-                <CheckCircle className="h-4.5 w-4.5 shrink-0" />
+              <div className="flex items-center space-x-2 text-emerald-600 bg-emerald-50 border border-emerald-100 p-4 rounded-xl text-sm font-semibold">
+                <CheckCircle className="h-5 w-5 shrink-0" />
                 <span>Thank you! Your review has been added successfully.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div className="grid grid-cols-2 gap-3">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Name *</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Name *</label>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Your Name"
-                      className="w-full text-sm border border-slate-200 rounded-lg p-2.5 focus:outline-hidden focus:border-primary"
+                      className="w-full text-sm border border-slate-250 rounded-xl p-3 bg-slate-50/50 focus:outline-hidden focus:border-primary focus:bg-white transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Location</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Location</label>
                     <input
                       type="text"
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
                       placeholder="e.g. Mangaluru, Udupi"
-                      className="w-full text-sm border border-slate-200 rounded-lg p-2.5 focus:outline-hidden focus:border-primary"
+                      className="w-full text-sm border border-slate-250 rounded-xl p-3 bg-slate-50/50 focus:outline-hidden focus:border-primary focus:bg-white transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Rating</label>
-                  <div className="flex items-center space-x-1.5">
+                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Rating</label>
+                  <div className="flex items-center space-x-2">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
                         type="button"
                         key={star}
                         onClick={() => setRating(star)}
-                        className="cursor-pointer"
+                        className="cursor-pointer hover:scale-110 transition-transform"
                       >
                         <Star
-                          className={`h-5 w-5 ${
+                          className={`h-6 w-6 ${
                             star <= rating ? "text-amber-400 fill-amber-400" : "text-slate-250"
                           }`}
                         />
@@ -169,29 +168,29 @@ export default function Feedback() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Review *</label>
+                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Review *</label>
                   <textarea
                     required
-                    rows={3}
+                    rows={4}
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                     placeholder="Tell us what you liked about our service..."
-                    className="w-full text-sm border border-slate-200 rounded-lg p-2.5 focus:outline-hidden focus:border-primary"
+                    className="w-full text-sm border border-slate-250 rounded-xl p-3 bg-slate-50/50 focus:outline-hidden focus:border-primary focus:bg-white transition-colors"
                   />
                 </div>
 
-                <div className="flex justify-end space-x-2 pt-1">
+                <div className="flex justify-end space-x-3 pt-2">
                   <button
                     type="button"
                     onClick={() => setFormOpen(false)}
-                    className="px-4 py-2 text-sm font-bold text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-lg"
+                    className="px-4 py-2.5 text-sm font-bold text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-xl"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-4 py-2 text-sm font-bold text-white bg-primary hover:bg-primary-hover rounded-lg shadow-xs disabled:opacity-50"
+                    className="px-5 py-2.5 text-sm font-extrabold text-white bg-primary hover:bg-primary-hover rounded-xl shadow-xs disabled:opacity-50 transition-colors"
                   >
                     {loading ? "Submitting..." : "Submit Review"}
                   </button>
@@ -202,19 +201,19 @@ export default function Feedback() {
         )}
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-150 p-4 rounded-xl shadow-2xs hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
+              className="bg-white border border-slate-150 p-6 rounded-2xl shadow-3xs card-hover flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center space-x-0.5">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-3.5 w-3.5 ${
+                        className={`h-4 w-4 ${
                           i < rev.rating ? "text-amber-400 fill-amber-400" : "text-slate-200"
                         }`}
                       />
@@ -227,13 +226,13 @@ export default function Feedback() {
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between">
+              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <h4 className="text-sm font-extrabold text-slate-800">{rev.name}</h4>
                   <p className="text-xs text-slate-400">{rev.location}</p>
                 </div>
-                <div className="flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-sm">
-                  <ShieldCheck className="h-4 w-4 mr-0.5 text-emerald-500" />
+                <div className="flex items-center text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">
+                  <ShieldCheck className="h-4 w-4 mr-1 text-emerald-600" />
                   <span>Verified Clean</span>
                 </div>
               </div>

@@ -49,25 +49,17 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo / Brand Name */}
-          <div className="flex flex-col justify-center">
-            <Link href="/" className="flex items-center space-x-2.5">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link href="/">
               <Image
                 src="/images/logo.png"
-                alt="Swachhath Logo"
-                width={40}
-                height={40}
+                alt="Swachhath Cleaning Solution"
+                width={52}
+                height={52}
                 priority
                 className="object-contain"
               />
-              <div className="flex flex-col">
-                <span className="font-heading text-lg font-extrabold tracking-tight text-slate-900 leading-none">
-                  SWACHHATH
-                </span>
-                <span className="text-xs font-semibold text-primary tracking-widest uppercase mt-0.5">
-                  Cleaning Solution
-                </span>
-              </div>
             </Link>
           </div>
 

@@ -6,7 +6,7 @@
   
   --primary: #162659;
   --primary-hover: #0e183a;
-  --primary-light: #f0f3fa;
+  --primary-light: #edf0f7;
   
   --secondary: #49b8d4;
   --secondary-hover: #33a1be;
@@ -43,19 +43,19 @@
 
 /* Custom Base Styles */
 html {
-  font-size: 16.5px; /* Subtle size boost on mobile */
+  font-size: 16.5px;
   scroll-behavior: smooth;
 }
 
 @media (min-width: 645px) {
   html {
-    font-size: 17px; /* Subtle size boost on tablet */
+    font-size: 17px;
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 17.5px; /* Subtle size boost on desktop */
+    font-size: 17.5px;
   }
 }
 
@@ -70,15 +70,42 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
-/* Custom styles for compact sections */
+/* Section spacing */
 .section-compact {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
   .section-compact {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Gradient text utility */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #162659 0%, #49b8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(22, 38, 89, 0.15);
 }

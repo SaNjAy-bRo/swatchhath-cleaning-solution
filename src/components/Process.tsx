@@ -1,4 +1,4 @@
-import { ClipboardList, MapPin, Sparkles, CreditCard } from "lucide-react";
+import { ClipboardList, MapPin, Sparkles, CreditCard, ArrowRight } from "lucide-react";
 
 export default function Process() {
   const steps = [
@@ -28,7 +28,7 @@ export default function Process() {
       title: "Inspect & Pay",
       desc: "Verify the quality of cleaning. Pay once you are 100% satisfied with the work.",
       icon: CreditCard,
-      color: "text-amber-600 bg-amber-50",
+      color: "text-emerald-600 bg-emerald-50",
     },
   ];
 
@@ -37,47 +37,49 @@ export default function Process() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs font-extrabold text-primary tracking-widest uppercase block mb-1">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs font-extrabold text-secondary tracking-[0.2em] uppercase block mb-2">
             Our Workflow
           </span>
           <h2 className="font-heading text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            How It Works in 4 Steps
+            How It Works in 4 Simple Steps
           </h2>
-          <p className="text-sm text-slate-600 mt-1">
+          <p className="text-base text-slate-655 mt-2 leading-relaxed">
             We keep our process simple, transparent, and focused on your ultimate satisfaction.
           </p>
         </div>
 
         {/* Timeline Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {steps.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={idx}
-                className="relative bg-slate-50 border border-slate-100 p-4.5 rounded-xl shadow-2xs hover:shadow-xs transition-all duration-200"
+                className="relative bg-white border border-slate-150 p-6 rounded-2xl shadow-3xs card-hover flex flex-col justify-between"
               >
-                {/* Step number badge */}
-                <div className="absolute top-3.5 right-3.5 text-xs font-black text-slate-200 font-heading">
-                  {item.step}
-                </div>
+                <div>
+                  {/* Step number badge */}
+                  <div className="text-3xl font-black text-slate-100 font-heading mb-4 select-none">
+                    {item.step}
+                  </div>
 
-                {/* Icon */}
-                <div className={`p-2 rounded-lg w-9 h-9 flex items-center justify-center mb-3 ${item.color}`}>
-                  <IconComponent className="h-4.5 w-4.5" />
-                </div>
+                  {/* Icon */}
+                  <div className={`p-3 rounded-xl w-11 h-11 flex items-center justify-center mb-4 ${item.color} shadow-3xs`}>
+                    <IconComponent className="h-5 w-5" />
+                  </div>
 
-                {/* Details */}
-                <h3 className="text-base font-extrabold text-slate-900">{item.title}</h3>
-                <p className="text-sm text-slate-500 mt-1 leading-relaxed">
-                  {item.desc}
-                </p>
+                  {/* Details */}
+                  <h3 className="text-base font-extrabold text-slate-900 leading-snug">{item.title}</h3>
+                  <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
 
                 {/* Arrow Connector (for desktop view, omit for last step) */}
                 {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-slate-300 font-bold text-lg">
-                    →
+                  <div className="hidden lg:flex absolute top-1/2 -right-4.5 -translate-y-1/2 z-10 text-slate-300 font-bold items-center justify-center">
+                    <ArrowRight className="h-5 w-5" />
                   </div>
                 )}
               </div>

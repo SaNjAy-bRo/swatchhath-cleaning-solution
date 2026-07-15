@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Send, MapPin, CheckCircle2, MessageSquare } from "lucide-react";
+import { Send, MapPin, CheckCircle2, MessageSquare, Phone } from "lucide-react";
 
 export default function ContactForm({ defaultService = "" }: { defaultService?: string }) {
   const servicesList = [
@@ -29,6 +29,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
       setService(defaultService);
     }
   }, [defaultService]);
+
   const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -70,65 +71,65 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
   return (
     <section id="contact" className="section-compact bg-white border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        <div className="grid md:grid-cols-12 gap-8 items-start">
+        <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Info Column (Left) */}
-          <div className="md:col-span-5 space-y-4">
+          <div className="md:col-span-5 space-y-6">
             <div>
-              <span className="text-xs font-extrabold text-primary tracking-widest uppercase block mb-1">
+              <span className="text-xs font-extrabold text-secondary tracking-[0.2em] uppercase block mb-2">
                 Get in Touch
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                 Request a Free Quote
               </h2>
-              <p className="text-base text-slate-600 mt-1">
+              <p className="text-base text-slate-600 mt-2 leading-relaxed">
                 Fill out the form or chat directly with us on WhatsApp to get pricing details for your specific location.
               </p>
             </div>
 
             {/* Kannada / Localized Notice Banner */}
-            <div className="bg-emerald-50 border border-emerald-100/60 p-4 rounded-xl space-y-2">
-              <div className="flex items-center space-x-2 text-emerald-800 font-extrabold text-sm">
-                <MessageSquare className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
+            <div className="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl space-y-3">
+              <div className="flex items-center space-x-2 text-emerald-800 font-extrabold text-sm tracking-wide">
+                <MessageSquare className="h-5 w-5 text-emerald-600 shrink-0" />
                 <span>FASTEST WAY TO GET RATES:</span>
               </div>
-              <p className="text-sm text-emerald-955 font-semibold leading-relaxed">
-                Please mention what service you want and share your <strong className="text-emerald-700 font-bold">Current Location on WhatsApp</strong> so we can assist you faster.
+              <p className="text-sm text-emerald-950 font-semibold leading-relaxed">
+                Please mention what service you want and share your <strong className="text-emerald-700 font-extrabold">Current Location on WhatsApp</strong> so we can assist you faster.
               </p>
-              <div className="text-sm text-emerald-855 border-t border-emerald-100/60 pt-2 font-semibold italic leading-relaxed">
-                ದರ ತಿಳಿದುಕೊಳ್ಳುವ ಮೊದಲು ಯಾವ service ಬೇಕು ಎಂದು ತಿಳಿಸಿ ಮತ್ತು ನಿಮ್ಮ <strong className="text-emerald-700 font-bold">CURRENT LOCATION</strong> ನಮಗೆ ಶೇರ್ ಮಾಡಿ.
+              <div className="text-sm text-emerald-850 border-t border-emerald-100/60 pt-3 font-semibold italic leading-relaxed">
+                ದರ ತಿಳಿದುಕೊಳ್ಳುವ ಮೊದಲು ಯಾವ service ಬೇಕು ಎಂದು ತಿಳಿಸಿ ಮತ್ತು ನಿಮ್ಮ <strong className="text-emerald-700 font-extrabold">CURRENT LOCATION</strong> ನಮಗೆ ಶೇರ್ ಮಾಡಿ.
               </div>
-              <p className="text-xs text-slate-400 mt-1">
-                * Note: Transportation charges apply separately on a location basis.
+              <p className="text-[11px] text-slate-450 leading-normal">
+                * Note: Transportation charges apply separately on a location basis from our closest base.
               </p>
             </div>
 
             {/* Quick Contact Specs */}
-             <div className="space-y-2 text-sm text-slate-600">
-              <div className="flex items-center space-x-2">
-                <span className="font-bold text-slate-800">Phone & WhatsApp:</span>
-                <a href={`tel:${whatsappNumber}`} className="hover:text-primary font-semibold">+91 94819 77717</a>
+            <div className="space-y-3 pt-2 text-sm text-slate-600 border-t border-slate-100">
+              <div className="flex items-center space-x-3">
+                <span className="font-bold text-slate-800 min-w-[120px]">Phone & WhatsApp:</span>
+                <a href={`tel:${whatsappNumber}`} className="hover:text-primary font-bold text-primary transition-colors">+91 94819 77717</a>
               </div>
-              <div className="flex items-center space-x-2">
-                <span className="font-bold text-slate-800">Operational:</span>
-                <span>Mon - Sun (8:00 AM - 8:00 PM)</span>
+              <div className="flex items-center space-x-3">
+                <span className="font-bold text-slate-800 min-w-[120px]">Operational:</span>
+                <span className="font-medium">Mon - Sun (8:00 AM - 8:00 PM)</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <span className="font-bold text-slate-800">Location:</span>
-                <span>Karnataka, India</span>
+              <div className="flex items-center space-x-3">
+                <span className="font-bold text-slate-800 min-w-[120px]">Location:</span>
+                <span className="font-medium">Karnataka, India</span>
               </div>
             </div>
           </div>
 
           {/* Form Column (Right) */}
-          <div className="md:col-span-7 bg-slate-50 border border-slate-150 p-4 sm:p-6 rounded-xl shadow-2xs">
+          <div className="md:col-span-7 bg-slate-50/50 border border-slate-150 p-6 sm:p-8 rounded-2xl shadow-3xs">
             {submitted ? (
-               <div className="text-center py-8 space-y-3">
-                <div className="inline-flex items-center justify-center p-3 bg-emerald-100 text-emerald-600 rounded-full">
+              <div className="text-center py-8 space-y-4">
+                <div className="inline-flex items-center justify-center p-3 bg-emerald-100 text-emerald-600 rounded-full shadow-inner">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="font-heading text-lg font-extrabold text-slate-900">Request Sent Successfully!</h3>
-                <p className="text-sm text-slate-600 max-w-sm mx-auto">
+                <h3 className="font-heading text-lg font-black text-slate-900">Request Sent Successfully!</h3>
+                <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
                   Thank you for reaching out. We will get back to you shortly or in the evening. Please cooperate.
                 </p>
                 <div className="pt-2">
@@ -136,47 +137,47 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-5 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-xs"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
                   >
                     Send on WhatsApp For Instant Reply
                   </a>
                 </div>
               </div>
             ) : (
-               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4.5">
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Your Name *</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Your Name *</label>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Anand Kumar"
-                      className="w-full text-sm border border-slate-200 rounded-lg p-3 bg-white focus:outline-hidden focus:border-primary"
+                      className="w-full text-sm border border-slate-200 rounded-xl p-3 bg-white focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Phone Number *</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Phone Number *</label>
                     <input
                       type="tel"
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="e.g. 9876543210"
-                      className="w-full text-sm border border-slate-200 rounded-lg p-3 bg-white focus:outline-hidden focus:border-primary"
+                      className="w-full text-sm border border-slate-200 rounded-xl p-3 bg-white focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4.5">
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Required Service *</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Required Service *</label>
                     <select
                       required
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full text-sm border border-slate-200 rounded-lg p-3 bg-white focus:outline-hidden focus:border-primary"
+                      className="w-full text-sm border border-slate-200 rounded-xl p-3 bg-white focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all cursor-pointer"
                     >
                       <option value="">-- Select Service --</option>
                       {servicesList.map((srv, idx) => (
@@ -185,7 +186,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Your Location / Town *</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Your Location / Town *</label>
                     <div className="relative">
                       <input
                         type="text"
@@ -193,32 +194,32 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         placeholder="e.g. Mangaluru, Udupi, Karkala"
-                        className="w-full text-sm border border-slate-200 rounded-lg p-3 pl-9 bg-white focus:outline-hidden focus:border-primary"
+                        className="w-full text-sm border border-slate-200 rounded-xl p-3 pl-9 bg-white focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
                       />
-                      <MapPin className="absolute left-3 top-3.5 h-5 w-5 text-slate-400" />
+                      <MapPin className="absolute left-3 top-3.5 h-4.5 w-4.5 text-slate-400" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Special Requirements / Message</label>
+                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1.5">Special Requirements / Message</label>
                   <textarea
-                    rows={3}
+                    rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Provide details (e.g., number of floors, size of overhead tank, etc.)"
-                    className="w-full text-sm border border-slate-200 rounded-lg p-3 bg-white focus:outline-hidden focus:border-primary"
+                    className="w-full text-sm border border-slate-200 rounded-xl p-3 bg-white focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
                   />
                 </div>
 
-                <div className="flex items-center justify-between pt-1">
-                  <span className="text-xs text-slate-500 italic">* All fields marked with * are required.</span>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
+                  <span className="text-xs text-slate-450 italic">* All fields marked with * are required.</span>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center px-5 py-3 text-sm font-bold text-white bg-primary hover:bg-primary-hover rounded-lg shadow-xs cursor-pointer disabled:opacity-50"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-extrabold text-white bg-primary hover:bg-primary-hover rounded-xl shadow-md shadow-primary/10 cursor-pointer disabled:opacity-50 transition-all"
                   >
-                    <Send className="h-4 w-4 mr-1.5" />
+                    <Send className="h-4.5 w-4.5 mr-2" />
                     {loading ? "Submitting..." : "Send Quote Request"}
                   </button>
                 </div>
