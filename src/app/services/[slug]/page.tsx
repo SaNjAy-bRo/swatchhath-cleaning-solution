@@ -103,7 +103,7 @@ export default function ServicePage() {
         </div>
 
         {/* Quick Action Bar */}
-        <div className="bg-white border-b border-slate-100 shadow-xs sticky top-16 z-30">
+        <div className="bg-white border-b border-slate-100 shadow-xs sticky top-20 z-30">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3">
             <div className="hidden sm:flex items-center gap-4 text-xs text-slate-500 shrink-0">
               <span className="flex items-center gap-1.5">

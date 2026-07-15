@@ -48,15 +48,15 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/">
               <Image
                 src="/images/logo.png"
                 alt="Swachhath Cleaning Solution"
-                width={52}
-                height={52}
+                width={64}
+                height={64}
                 priority
                 className="object-contain"
               />
