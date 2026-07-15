@@ -43,16 +43,13 @@ export default function Services() {
     <section id="services" className="py-16 md:py-20 bg-slate-50/60 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-extrabold text-secondary tracking-[0.2em] uppercase block mb-2">
             What We Offer
           </span>
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
             Our Professional Cleaning Services
           </h2>
-          <p className="text-base text-slate-600 mt-2 leading-relaxed">
-            Top-tier deep cleaning, sanitizing, and maintenance services for homes, businesses, and community sites across coastal Karnataka.
-          </p>
         </div>
 
         {/* Service Cards Grid */}

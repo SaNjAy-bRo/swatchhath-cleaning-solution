@@ -59,14 +59,14 @@ export default function Process() {
                 className="relative bg-white border border-slate-150 p-6 rounded-2xl shadow-3xs card-hover flex flex-col justify-between"
               >
                 <div>
-                  {/* Step number badge */}
-                  <div className="text-3xl font-black text-slate-100 font-heading mb-4 select-none">
-                    {item.step}
-                  </div>
-
-                  {/* Icon */}
-                  <div className={`p-3 rounded-xl w-11 h-11 flex items-center justify-center mb-4 ${item.color} shadow-3xs`}>
-                    <IconComponent className="h-5 w-5" />
+                  {/* Icon and Step number aligned on same line */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`p-3 rounded-xl w-11 h-11 flex items-center justify-center ${item.color} shadow-3xs`}>
+                      <IconComponent className="h-5 w-5" />
+                    </div>
+                    <span className="text-3xl font-black text-slate-100 font-heading select-none">
+                      {item.step}
+                    </span>
                   </div>
 
                   {/* Details */}

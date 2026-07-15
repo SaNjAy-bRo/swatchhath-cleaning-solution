@@ -34,16 +34,13 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-extrabold text-secondary tracking-[0.2em] uppercase block mb-2">
             Why Swachhath
           </span>
           <h2 className="font-heading text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
             Your Local Partner in Hygiene & Cleanness
           </h2>
-          <p className="text-base text-slate-655 mt-2 leading-relaxed">
-            We deliver premium deep cleaning that other basic maids can't match, using professional tools and expert crew.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-12 gap-8 items-stretch">
