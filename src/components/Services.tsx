@@ -1,234 +1,120 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { servicesList } from "../data/servicesData";
 import {
-  Sparkles,
   Home,
+  Sparkles,
   Droplet,
+  Wind,
+  Armchair,
   Sun,
   Wrench,
   Layers,
   Activity,
-  Wind,
   Heart,
   Building2,
-  Armchair,
-  Check,
-  ChevronRight
+  ArrowRight
 } from "lucide-react";
 
-type ServiceItem = {
-  name: string;
-  desc: string;
-  icon: any;
+const iconMap: Record<string, any> = {
+  Home,
+  Sparkles,
+  Droplet,
+  Wind,
+  Armchair,
+  Sun,
+  Wrench,
+  Layers,
+  Activity,
+  Heart,
+  Building2
 };
 
-type Category = "residential" | "specialized" | "commercial";
+const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
+  Residential: { bg: "bg-blue-50", text: "text-blue-700", border: "border-blue-200" },
+  Specialized: { bg: "bg-amber-50", text: "text-amber-700", border: "border-amber-200" },
+  Commercial: { bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-200" },
+};
 
 export default function Services() {
-  const [activeTab, setActiveTab] = useState<Category>("residential");
-
-  const categories: { id: Category; label: string }[] = [
-    { id: "residential", label: "Residential & Home" },
-    { id: "specialized", label: "Specialized Washing" },
-    { id: "commercial", label: "Commercial & Venues" },
-  ];
-
-  const servicesData: Record<Category, { services: ServiceItem[]; image: string; tag: string }> = {
-    residential: {
-      tag: "Sparkling clean homes",
-      image: "/images/home-cleaning.png",
-      services: [
-        {
-          name: "Flat & House Cleaning",
-          desc: "Complete sweep, mop, dust, and deep sanitization of all rooms, kitchens, and toilets.",
-          icon: Home,
-        },
-        {
-          name: "Basic & Deep Cleaning",
-          desc: "Intense cleanup including stain removal, tile scrubbing, fan dusting, and window washing.",
-          icon: Sparkles,
-        },
-        {
-          name: "Overhead Tank & Sump Cleaning",
-          desc: "Mechanical water tank cleaning, high-pressure washing, sludge removal, and sanitization.",
-          icon: Droplet,
-        },
-        {
-          name: "Vacuum Cleaning & Sofa Rubbing",
-          desc: "Deep vacuuming of carpets, curtains, and dust extraction from all fabric surfaces.",
-          icon: Wind,
-        },
-        {
-          name: "Furniture Cleaning",
-          desc: "Polishing wooden furniture and scrubbing/shampooing sofas, chairs, and mattresses.",
-          icon: Armchair,
-        },
-      ],
-    },
-    specialized: {
-      tag: "Advanced equipment wash",
-      image: "/images/solar-cleaning.png",
-      services: [
-        {
-          name: "High Pressure Wash Cleaning",
-          desc: "Blast away deep grime from driveways, exterior walls, compounds, and gates.",
-          icon: Droplet,
-        },
-        {
-          name: "Solar Tubes & Panel Cleaning",
-          desc: "Safe water jet cleaning of solar plates to maximize light absorption and efficiency.",
-          icon: Sun,
-        },
-        {
-          name: "Solar Coil Fitting & Tube Changing",
-          desc: "Professional maintenance, fixing loose coils, and replacement of damaged glass tubes.",
-          icon: Wrench,
-        },
-        {
-          name: "Signboard & Facade Cleaning",
-          desc: "High-reach washing and detailing for shops, hotels, and office exterior hoardings.",
-          icon: Layers,
-        },
-      ],
-    },
-    commercial: {
-      tag: "Heavy-duty polishing",
-      image: "/images/premium-cleaning.png",
-      services: [
-        {
-          name: "Floor Scrubbing & Rubbing",
-          desc: "Industrial machine scrubbing for marble, granite, vitrified tile, and concrete floors.",
-          icon: Activity,
-        },
-        {
-          name: "Temple / Masjid / Church Cleaning",
-          desc: "Dedicated large-scale hygiene services for holy spaces with regional respect and care.",
-          icon: Heart,
-        },
-        {
-          name: "Resort & Homestay Cleaning",
-          desc: "Quick turnaround deep cleaning for hospitality sectors ensuring 5-star guest reviews.",
-          icon: Building2,
-        },
-      ],
-    },
-  };
-
-  const whatsappNumber = "+919481977717";
-  
-  const getEnquiryLink = (serviceName: string) => {
-    const text = encodeURIComponent(
-      `Hi Swachhath Cleaning Solution, I am interested in your "${serviceName}" service. Please share pricing and details.`
-    );
-    return `https://wa.me/${whatsappNumber}?text=${text}`;
-  };
-
-  const activeData = servicesData[activeTab];
-
   return (
-    <section id="services" className="section-compact bg-slate-50/50 border-b border-slate-100">
+    <section id="services" className="py-16 md:py-20 bg-slate-50/60 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-6">
-          <h2 className="font-heading text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs font-extrabold text-secondary tracking-[0.2em] uppercase block mb-2">
+            What We Offer
+          </span>
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
             Our Professional Cleaning Services
           </h2>
-          <p className="text-base text-slate-600 mt-1">
-            Top-tier deep cleaning, sanitizing, and maintenance services for homes, businesses, and community sites.
+          <p className="text-base text-slate-600 mt-2 leading-relaxed">
+            Top-tier deep cleaning, sanitizing, and maintenance services for homes, businesses, and community sites across coastal Karnataka.
           </p>
         </div>
 
-        {/* Custom Tabs */}
-        <div className="flex justify-center space-x-2 mb-6">
-          {categories.map((cat) => {
-            const isActive = activeTab === cat.id;
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {servicesList.map((service) => {
+            const Icon = iconMap[service.iconName] || Sparkles;
+            const colors = categoryColors[service.category] || categoryColors.Residential;
+
             return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={`px-4 py-2 text-sm sm:text-base font-bold rounded-lg transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? "bg-primary text-white shadow-xs"
-                    : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
-                }`}
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group bg-white rounded-2xl border border-slate-150 shadow-xs hover:shadow-lg hover:border-primary/30 transition-all duration-300 overflow-hidden flex flex-col"
               >
-                {cat.label}
-              </button>
+                {/* Card Image */}
+                <div className="relative h-44 sm:h-48 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                  
+                  {/* Category badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-full ${colors.bg} ${colors.text} border ${colors.border} backdrop-blur-sm uppercase tracking-wider`}>
+                      {service.category}
+                    </span>
+                  </div>
+
+                  {/* Icon circle overlay */}
+                  <div className="absolute bottom-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-md border border-white/50 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <Icon className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-4 sm:p-5 flex flex-col flex-1">
+                  <h3 className="font-heading text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-primary transition-colors duration-200 leading-snug">
+                    {service.name}
+                  </h3>
+                  <p className="text-sm text-slate-500 mt-1.5 leading-relaxed flex-1 line-clamp-2">
+                    {service.desc}
+                  </p>
+                  
+                  {/* CTA row */}
+                  <div className="flex items-center justify-between mt-3.5 pt-3 border-t border-slate-100">
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">
+                      {service.tag}
+                    </span>
+                    <span className="inline-flex items-center text-sm font-bold text-primary group-hover:text-primary-hover transition-colors">
+                      Details
+                      <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
             );
           })}
-        </div>
-
-        {/* Tab Content Box */}
-        <div className="grid md:grid-cols-12 gap-6 bg-white rounded-xl border border-slate-150 p-4 sm:p-6 shadow-xs items-stretch">
-          
-          {/* Services List (Left) */}
-          <div className="md:col-span-7 flex flex-col justify-between space-y-4">
-            <div className="space-y-3.5">
-              <span className="text-xs font-extrabold text-primary tracking-widest uppercase block mb-1">
-                {activeData.tag}
-              </span>
-              
-              {activeData.services.map((service, idx) => {
-                const IconComponent = service.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="group flex items-start space-x-3.5 p-2 rounded-lg hover:bg-slate-50/60 transition-colors"
-                  >
-                    <div className="flex-shrink-0 p-2 bg-primary-light text-primary rounded-lg group-hover:scale-105 transition-transform duration-200">
-                      <IconComponent className="h-4.5 w-4.5" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base font-bold text-slate-900 leading-snug flex items-center">
-                        {service.name}
-                      </h3>
-                      <p className="text-sm text-slate-500 mt-0.5 leading-relaxed">
-                        {service.desc}
-                      </p>
-                    </div>
-                    <a
-                      href={getEnquiryLink(service.name)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm font-bold text-primary group-hover:text-primary-hover shrink-0 self-center pl-2"
-                    >
-                      <span className="hidden sm:inline">Book</span>
-                      <ChevronRight className="h-4.5 w-4.5 ml-0.5" />
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Featured Service Image (Right) */}
-          <div className="md:col-span-5 flex flex-col justify-center mt-4 md:mt-0">
-            <div className="relative rounded-lg overflow-hidden h-48 md:h-full min-h-[220px] shadow-xs group">
-              <Image
-                src={activeData.image}
-                alt={activeData.tag}
-                fill
-                sizes="(max-w-768px) 100vw, 33vw"
-                priority
-                className="object-cover group-hover:scale-103 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
-                <div className="flex items-center space-x-1.5 text-xs font-bold text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded-sm w-fit mb-1.5 backdrop-blur-xs">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>Premium Care</span>
-                </div>
-                <h4 className="font-heading text-base font-extrabold text-white">
-                  Swachhath Cleaning Services
-                </h4>
-                <p className="text-xs text-slate-200 mt-0.5">
-                  Top equipment, zero-damage guarantee, local Karnataka staff.
-                </p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
