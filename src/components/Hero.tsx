@@ -1,5 +1,4 @@
-import { Star, ShieldCheck, Leaf, Phone, Droplets, ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { Star, ShieldCheck, Leaf, Phone, Droplets } from "lucide-react";
 
 export default function Hero() {
   const whatsappNumber = "+919481977717";
@@ -10,16 +9,18 @@ export default function Hero() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <section className="relative overflow-hidden min-h-[75vh] sm:min-h-0 flex items-center">
-      {/* Background with navy blue gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0c1a40] via-[#162659] to-[#1e3a6e]" />
+    <section className="relative overflow-hidden min-h-[75vh] sm:min-h-0 flex items-center bg-[url('/images/hero-modern-bg.png')] bg-cover bg-center">
+      {/* Rich blue overlay (gradient from dark navy blue to cyan-blue, slightly transparent) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a40]/95 via-[#162659]/90 to-[#1e3a6e]/75 z-0" />
+      
       {/* Decorative circles */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl z-0" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl z-0" />
+      
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+      <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-28">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-28 z-10">
         <div className="grid md:grid-cols-12 gap-10 items-center">
           
           {/* Text Content */}
