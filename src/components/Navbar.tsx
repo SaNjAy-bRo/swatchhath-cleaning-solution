@@ -196,28 +196,37 @@ export default function Navbar() {
 
             {/* Services list with scrolling */}
             <div className="flex flex-col space-y-3 pt-3 border-t border-slate-100">
-              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
-                Our Services
-              </span>
-              <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto pr-1.5 mobile-services-scroll">
-                {servicesList.map((service) => {
-                  const Icon = iconMap[service.iconName] || Sparkles;
-                  return (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center space-x-2.5 p-2 rounded-lg hover:bg-slate-50 transition-colors"
-                    >
-                      <div className="p-1 bg-slate-100 text-slate-500 rounded-md">
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="text-xs font-bold text-slate-800 truncate">
-                        {service.name}
-                      </span>
-                    </Link>
-                  );
-                })}
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
+                  Our Services
+                </span>
+                <span className="text-[9px] bg-secondary-light text-secondary font-extrabold px-2 py-0.5 rounded-full border border-secondary/15 tracking-wider animate-pulse uppercase">
+                  Scroll for all ↕
+                </span>
+              </div>
+              <div className="relative">
+                <div className="grid grid-cols-1 gap-2 max-h-52 overflow-y-auto pr-1.5 mobile-services-scroll pb-4">
+                  {servicesList.map((service) => {
+                    const Icon = iconMap[service.iconName] || Sparkles;
+                    return (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center space-x-2.5 p-2 rounded-lg hover:bg-slate-50 transition-colors"
+                      >
+                        <div className="p-1 bg-slate-100 text-slate-500 rounded-md">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <span className="text-xs font-bold text-slate-800 truncate">
+                          {service.name}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+                {/* Visual fade cue indicating scrollable overflow */}
+                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
               </div>
             </div>
 
