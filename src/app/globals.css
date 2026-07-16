@@ -109,3 +109,16 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px -12px rgba(22, 38, 89, 0.15);
 }
+
+/* Hero responsive overrides for tuned background image fit */
+@media (min-width: 768px) {
+  .hero-tuned-bg {
+    min-height: 92vh !important;
+    background-size: 95% !important;
+    background-position: 100% 94% !important;
+  }
+  .hero-tuned-container {
+    padding-top: 150px !important;
+    padding-bottom: 150px !important;
+  }
+}
