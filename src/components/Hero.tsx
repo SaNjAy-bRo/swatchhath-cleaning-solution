@@ -9,7 +9,7 @@ export default function Hero() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <section className="relative overflow-hidden min-h-[75vh] sm:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-center">
+    <section className="relative overflow-hidden min-h-[75vh] sm:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-bottom md:bg-right-bottom">
       {/* Rich blue overlay (gradient from dark navy blue to transparent, showing the cartoon illustration) */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#162659]/90 via-[#162659]/55 to-[#162659]/15 z-0" />
       
@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="grid md:grid-cols-12 gap-10 items-center">
           
           {/* Text Content */}
-          <div className="md:col-span-7 flex flex-col items-center text-center sm:items-start sm:text-left justify-center space-y-6 max-w-xl">
+          <div className="md:col-span-8 lg:col-span-7 flex flex-col items-center text-center sm:items-start sm:text-left justify-center space-y-6 max-w-xl">
             {/* Brand pill */}
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white/90 px-4 py-1.5 rounded-full text-xs font-bold w-fit tracking-wider border border-white/10">
               <Droplets className="h-3.5 w-3.5 text-secondary" />
@@ -76,54 +76,6 @@ export default function Hero() {
                 <Phone className="w-4.5 h-4.5 mr-2 text-secondary shrink-0" />
                 Call Us
               </a>
-            </div>
-          </div>
-
-          {/* Right Side — Stats Card */}
-          <div className="hidden md:block md:col-span-5 relative">
-            <div className="bg-white/[0.07] backdrop-blur-md rounded-2xl border border-white/10 p-6 max-w-sm mx-auto">
-              <div className="flex justify-between items-center mb-5">
-                <span className="text-xs font-bold text-white/50 tracking-wider uppercase">Our Footprint</span>
-                <span className="inline-flex items-center text-xs font-bold text-secondary bg-secondary/15 px-2.5 py-1 rounded-full">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse mr-1.5"></span>
-                  Active
-                </span>
-              </div>
-              <ul className="space-y-4">
-                <li className="flex items-start space-x-3.5">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
-                    <Droplets className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-extrabold text-white">High-Pressure Wash</h3>
-                    <p className="text-xs text-white/50 mt-0.5">Decks, compounds, walls, and solar setups.</p>
-                  </div>
-                </li>
-                <li className="flex items-start space-x-3.5">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
-                    <ShieldCheck className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-extrabold text-white">Sump & Water Tanks</h3>
-                    <p className="text-xs text-white/50 mt-0.5">Thorough cleaning for safe water storage.</p>
-                  </div>
-                </li>
-                <li className="flex items-start space-x-3.5">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
-                    <Star className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-extrabold text-white">Homes & Offices</h3>
-                    <p className="text-xs text-white/50 mt-0.5">Detailed dust, dirt, and stain scrubbing.</p>
-                  </div>
-                </li>
-              </ul>
-              <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/40">
-                <span>📍 Coastal Karnataka</span>
-                <span className="font-bold text-amber-400 flex items-center gap-1">
-                  <Star className="h-3 w-3 fill-amber-400" /> 4.9 Rated
-                </span>
-              </div>
             </div>
           </div>
         </div>
