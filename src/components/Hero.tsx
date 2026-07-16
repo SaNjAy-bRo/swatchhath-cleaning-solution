@@ -10,8 +10,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden min-h-[70vh] flex items-center bg-[url('/images/hero-exterior-mobile.png')] md:bg-[url('/images/hero-exterior-desktop.png')] bg-cover bg-bottom hero-tuned-bg bg-no-repeat">
-      {/* Rich black gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/95 via-[#000000]/80 to-[#000000]/45 z-0" />
+      {/* Solid black overlay */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
       
       {/* Decorative circles */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl z-0" />
