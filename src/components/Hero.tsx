@@ -9,7 +9,7 @@ export default function Hero() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <section className="relative overflow-hidden min-h-[70vh] sm:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-bottom md:bg-right-bottom">
+    <section className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] sm:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-bottom md:bg-right-bottom">
       {/* Rich blue overlay (gradient from dark navy blue to transparent, showing the cartoon illustration) */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#162659]/90 via-[#162659]/55 to-[#162659]/15 z-0" />
       
@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-28 z-10">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-36 z-10">
         <div className="grid md:grid-cols-12 gap-10 items-center">
           
           {/* Text Content */}
