@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { 
@@ -40,6 +40,22 @@ const iconMap: Record<string, any> = {
 export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isSolid = isScrolled || mobileMenuOpen;
 
   const whatsappNumber = "+919481977717";
   const whatsappMessage = encodeURIComponent(
@@ -49,7 +65,7 @@ export default function Navbar() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${isSolid ? "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs" : "bg-transparent border-b border-transparent shadow-none"}`}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center h-28 md:h-20">
           
@@ -57,7 +73,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center justify-start w-12">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer shadow-3xs"
+              className={`inline-flex items-center justify-center p-2 rounded-lg transition-all cursor-pointer shadow-3xs ${isSolid ? "text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900" : "text-white bg-white/10 border border-white/10 hover:bg-white/20 hover:text-white"}`}
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -68,33 +84,33 @@ export default function Navbar() {
           <div className="flex items-center justify-center md:justify-start flex-grow md:flex-grow-0">
             <Link href="/" className="flex items-center space-x-2.5">
               {/* Mobile Large Logo (Hidden on desktop) */}
-              <div className="md:hidden">
+              <div className="md:hidden bg-white rounded-full p-1 border border-slate-100 flex items-center justify-center shadow-xs">
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={100}
-                  height={100}
+                  width={90}
+                  height={90}
                   priority
-                  className="object-contain"
+                  className="object-contain rounded-full"
                 />
               </div>
               {/* Desktop Logo (Hidden on mobile) */}
-              <div className="hidden md:block">
+              <div className="hidden md:flex bg-white rounded-full p-1 border border-slate-100 items-center justify-center shrink-0 shadow-xs">
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={58}
-                  height={58}
+                  width={48}
+                  height={48}
                   priority
-                  className="object-contain shrink-0"
+                  className="object-contain shrink-0 rounded-full"
                 />
               </div>
               {/* Company name text (Hidden on mobile) */}
               <div className="hidden md:flex flex-col">
-                <span className="font-heading font-black text-[16px] sm:text-[18px] text-primary leading-tight uppercase tracking-tight">
+                <span className={`font-heading font-black text-[16px] sm:text-[18px] leading-tight uppercase tracking-tight transition-colors duration-300 ${isSolid ? "text-primary" : "text-white"}`}>
                   Swachhath
                 </span>
-                <span className="text-[8px] sm:text-[9px] font-bold text-secondary uppercase tracking-widest leading-none">
+                <span className={`text-[8px] sm:text-[9px] font-bold uppercase tracking-widest leading-none transition-colors duration-300 ${isSolid ? "text-secondary" : "text-white/80"}`}>
                   Cleaning Solution
                 </span>
               </div>
@@ -109,9 +125,9 @@ export default function Navbar() {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <button className="flex items-center text-sm font-bold text-slate-700 hover:text-primary transition-colors py-5 gap-1 outline-hidden">
+              <button className={`flex items-center text-sm font-bold transition-colors py-5 gap-1 outline-hidden ${isSolid ? "text-slate-700 hover:text-primary" : "text-white hover:text-white/80"}`}>
                 Services
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""} ${isSolid ? "text-slate-700" : "text-white"}`} />
               </button>
 
               {/* Mega Menu Dropdown */}
@@ -144,13 +160,13 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/#about" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors">
+            <Link href="/#about" className={`text-sm font-bold transition-colors ${isSolid ? "text-slate-700 hover:text-primary" : "text-white hover:text-white/80"}`}>
               Why Us
             </Link>
-            <Link href="/#reviews" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors">
+            <Link href="/#reviews" className={`text-sm font-bold transition-colors ${isSolid ? "text-slate-700 hover:text-primary" : "text-white hover:text-white/80"}`}>
               Reviews
             </Link>
-            <Link href="/#contact" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors">
+            <Link href="/#contact" className={`text-sm font-bold transition-colors ${isSolid ? "text-slate-700 hover:text-primary" : "text-white hover:text-white/80"}`}>
               Get a Quote
             </Link>
           </div>
@@ -159,9 +175,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href={phoneCallLink}
-              className="flex items-center text-sm font-bold text-slate-700 hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-slate-50"
+              className={`flex items-center text-sm font-bold transition-colors py-2 px-3 rounded-lg ${isSolid ? "text-slate-700 hover:text-primary hover:bg-slate-50" : "text-white hover:text-white hover:bg-white/10"}`}
             >
-              <Phone className="h-4 w-4 mr-2 text-primary" />
+              <Phone className={`h-4 w-4 mr-2 transition-colors ${isSolid ? "text-primary" : "text-white"}`} />
               +91 94819 77717
             </a>
             <a
@@ -184,7 +200,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center justify-end w-12">
             <a
               href={phoneCallLink}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-primary bg-primary-light border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer shadow-3xs"
+              className={`inline-flex items-center justify-center p-2 rounded-lg transition-all cursor-pointer shadow-3xs ${isSolid ? "text-primary bg-primary-light border border-primary/20 hover:bg-primary hover:text-white" : "text-white bg-white/10 border border-white/10 hover:bg-white/20 hover:text-white"}`}
               aria-label="Call Us"
             >
               <Phone className="h-5 w-5" />
@@ -196,7 +212,7 @@ export default function Navbar() {
 
       {/* Mobile drawer panel */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white shadow-lg animate-fadeIn max-h-[calc(100vh-5rem)] overflow-y-auto">
+        <div className="md:hidden border-t border-slate-100 bg-white shadow-lg animate-fadeIn max-h-[calc(100vh-7rem)] overflow-y-auto">
           <div className="px-6 py-4 space-y-4">
             {/* Navigation links */}
             <div className="flex flex-col space-y-3">

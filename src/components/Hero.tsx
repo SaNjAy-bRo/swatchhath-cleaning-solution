@@ -26,7 +26,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="md:col-span-8 lg:col-span-7 flex flex-col items-center text-center sm:items-start sm:text-left justify-center space-y-6 max-w-xl">
             {/* Trust Wording */}
-            <span className="text-secondary font-extrabold text-xs sm:text-sm uppercase tracking-widest">
+            <span className="text-white font-extrabold text-xs sm:text-sm uppercase tracking-widest">
               #1 Trusted Cleaning Service
             </span>
 
