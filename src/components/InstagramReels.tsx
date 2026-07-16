@@ -25,13 +25,13 @@ export default function InstagramReels() {
     {
       id: "reel-1",
       title: "Deep House Cleaning Transformation",
-      embedUrl: "", // Paste your Instagram Reel link here
+      embedUrl: "https://www.instagram.com/reel/DZFjAwiIg-8/", // Paste your Instagram Reel link here
       thumbnail: "/images/services/flat-house-cleaning.png"
     },
     {
       id: "reel-2",
       title: "High Pressure Driveway Wash",
-      embedUrl: "", // Paste your Instagram Reel link here
+      embedUrl: "https://www.instagram.com/reel/DanZxkizQ-l/", // Paste your Instagram Reel link here
       thumbnail: "/images/hero-exterior-desktop.png"
     },
     {
