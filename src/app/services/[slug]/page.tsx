@@ -57,7 +57,7 @@ export default function ServicePage() {
 
       <main className="flex-grow">
         {/* Hero Banner with Service Image (Compact Height) */}
-        <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+        <div className="relative h-56 sm:h-64 md:h-80 overflow-hidden">
           <Image
             src={service.image}
             alt={service.name}
@@ -69,7 +69,7 @@ export default function ServicePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-slate-950/20" />
 
           {/* Breadcrumb on top */}
-          <div className="absolute top-3 left-0 right-0 z-10">
+          <div className="absolute top-5 left-0 right-0 z-10">
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
               <Link
                 href="/"
@@ -83,7 +83,7 @@ export default function ServicePage() {
 
           {/* Hero content overlay */}
           <div className="absolute bottom-0 left-0 right-0 z-10">
-            <div className="max-w-6xl mx-auto px-6 sm:px-8 pb-4 sm:pb-5">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 pb-6 sm:pb-8">
               <div className="flex flex-wrap items-center gap-1.5 mb-2">
                 <span className="text-[10px] font-extrabold text-white bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full uppercase tracking-wider border border-white/20">
                   {service.category}
