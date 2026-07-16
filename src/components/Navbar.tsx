@@ -49,7 +49,7 @@ export default function Navbar() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-xs">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
