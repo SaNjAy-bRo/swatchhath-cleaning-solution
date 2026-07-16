@@ -164,7 +164,7 @@ export default function Navbar() {
 
       {/* Mobile drawer panel */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white shadow-lg animate-fadeIn">
+        <div className="md:hidden border-t border-slate-100 bg-white shadow-lg animate-fadeIn max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="px-6 py-4 space-y-4">
             {/* Navigation links */}
             <div className="flex flex-col space-y-3">
@@ -199,7 +199,7 @@ export default function Navbar() {
               <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
                 Our Services
               </span>
-              <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto pr-1">
+              <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto pr-1.5 mobile-services-scroll">
                 {servicesList.map((service) => {
                   const Icon = iconMap[service.iconName] || Sparkles;
                   return (

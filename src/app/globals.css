@@ -122,3 +122,25 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 150px !important;
   }
 }
+
+/* Custom styled scrollbar for mobile services list to ensure it is clearly scrollable */
+.mobile-services-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #49b8d4 #f1f5f9;
+}
+.mobile-services-scroll::-webkit-scrollbar {
+  width: 5px;
+  display: block !important;
+}
+.mobile-services-scroll::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 4px;
+}
+.mobile-services-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 1px solid #f8fafc;
+}
+.mobile-services-scroll::-webkit-scrollbar-thumb:hover {
+  background: #49b8d4;
+}
