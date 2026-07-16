@@ -25,9 +25,9 @@ export default function Hero() {
           
           {/* Text Content */}
           <div className="md:col-span-8 lg:col-span-7 flex flex-col items-center text-center sm:items-start sm:text-left justify-center space-y-6 max-w-xl">
-            {/* Trust badge wording */}
-            <span className="text-secondary font-extrabold text-xs sm:text-sm uppercase tracking-widest bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-xs">
-              #1 Trusted Cleaning Partner
+            {/* Trust Wording */}
+            <span className="text-secondary font-extrabold text-xs sm:text-sm uppercase tracking-widest">
+              Udupi & Mangalore's Trusted Cleaning Service
             </span>
 
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
