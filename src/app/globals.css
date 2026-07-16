@@ -113,13 +113,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero responsive overrides for tuned background image fit */
 @media (min-width: 768px) {
   .hero-tuned-bg {
-    min-height: 92vh !important;
-    background-size: 95% !important;
-    background-position: 100% 94% !important;
+    min-height: 85vh !important;
+    background-size: cover !important;
+    background-position: right center !important;
   }
   .hero-tuned-container {
-    padding-top: 150px !important;
-    padding-bottom: 150px !important;
+    padding-top: 140px !important;
+    padding-bottom: 140px !important;
   }
 }
 
