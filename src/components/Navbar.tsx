@@ -92,8 +92,8 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={90}
-                  height={90}
+                  width={58}
+                  height={58}
                   priority
                   className="object-contain rounded-full"
                 />
@@ -103,8 +103,8 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={48}
-                  height={48}
+                  width={34}
+                  height={34}
                   priority
                   className="object-contain shrink-0 rounded-full"
                 />
