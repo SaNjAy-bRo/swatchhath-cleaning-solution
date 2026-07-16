@@ -37,7 +37,7 @@ export default function InstagramReels() {
     {
       id: "reel-3",
       title: "Overhead Water Tank Sanitization",
-      embedUrl: "", // Paste your Instagram Reel link here
+      embedUrl: "https://www.instagram.com/reel/DX9XCKqTwge/", // Paste your Instagram Reel link here
       thumbnail: "/images/services/overhead-tank-sump-cleaning.png"
     }
   ];
