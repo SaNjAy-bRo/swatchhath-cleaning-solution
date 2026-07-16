@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
+import InstagramReels from "@/components/InstagramReels";
 import About from "@/components/About";
 import Feedback from "@/components/Feedback";
 import ContactForm from "@/components/ContactForm";
@@ -24,6 +25,9 @@ export default function Home() {
 
         {/* How It Works Workflow Section */}
         <Process />
+
+        {/* Instagram Reels & Video Showcase Section */}
+        <InstagramReels />
 
         {/* Why Choose Us Info Grid */}
         <About />
