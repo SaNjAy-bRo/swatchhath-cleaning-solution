@@ -9,9 +9,9 @@ export default function Hero() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <section className="relative overflow-hidden min-h-[75vh] sm:min-h-0 flex items-center bg-[url('/images/hero-modern-bg.png')] bg-cover bg-center">
-      {/* Rich blue overlay (gradient from dark navy blue to cyan-blue, slightly transparent) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a40]/95 via-[#162659]/90 to-[#1e3a6e]/75 z-0" />
+    <section className="relative overflow-hidden min-h-[75vh] sm:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-center">
+      {/* Rich blue overlay (gradient from dark navy blue to transparent, showing the cartoon illustration) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#162659]/90 via-[#162659]/55 to-[#162659]/15 z-0" />
       
       {/* Decorative circles */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl z-0" />
