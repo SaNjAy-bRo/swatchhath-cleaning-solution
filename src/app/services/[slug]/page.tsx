@@ -55,7 +55,7 @@ export default function ServicePage() {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-28 md:pt-20">
         {/* Hero Banner with Service Image (Compact Height) */}
         <div className="relative h-56 sm:h-64 md:h-80 overflow-hidden">
           <Image

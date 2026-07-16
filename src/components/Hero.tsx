@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 z-10 hero-tuned-container">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full pt-36 pb-16 sm:pt-40 sm:pb-20 z-10 hero-tuned-container">
         <div className="grid md:grid-cols-12 gap-10 items-center">
           
           {/* Text Content */}

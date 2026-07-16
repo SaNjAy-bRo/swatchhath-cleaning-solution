@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { 
   Phone, 
   CheckCircle, 
@@ -41,6 +42,9 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +59,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isSolid = isScrolled || mobileMenuOpen;
+  const isSolid = !isHomepage || isScrolled || mobileMenuOpen;
 
   const whatsappNumber = "+919481977717";
   const whatsappMessage = encodeURIComponent(
@@ -65,7 +69,7 @@ export default function Navbar() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${isSolid ? "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs" : "bg-transparent border-b border-transparent shadow-none"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSolid ? "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs" : "bg-transparent border-b border-transparent shadow-none"}`}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center h-28 md:h-20">
           
