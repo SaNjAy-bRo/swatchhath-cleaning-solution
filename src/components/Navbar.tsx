@@ -54,15 +54,23 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" className="flex items-center space-x-2.5">
               <Image
                 src="/images/logo.png"
                 alt="Swachhath Cleaning Solution"
-                width={64}
-                height={64}
+                width={50}
+                height={50}
                 priority
-                className="object-contain"
+                className="object-contain shrink-0"
               />
+              <div className="flex flex-col">
+                <span className="font-heading font-black text-[16px] sm:text-[18px] text-primary leading-tight uppercase tracking-tight">
+                  Swachhath
+                </span>
+                <span className="text-[8px] sm:text-[9px] font-bold text-secondary uppercase tracking-widest leading-none">
+                  Cleaning Solution
+                </span>
+              </div>
             </Link>
           </div>
 
