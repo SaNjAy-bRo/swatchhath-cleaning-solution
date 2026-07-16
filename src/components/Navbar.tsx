@@ -88,23 +88,23 @@ export default function Navbar() {
           <div className="flex items-center justify-center md:justify-start flex-grow md:flex-grow-0">
             <Link href="/" className="flex items-center space-x-2.5">
               {/* Mobile Large Logo (Hidden on desktop) */}
-              <div className="md:hidden bg-white rounded-full p-1 border border-slate-100 flex items-center justify-center shadow-xs">
+              <div className={`md:hidden rounded-full p-1 border flex items-center justify-center transition-all duration-300 ${isSolid ? "bg-transparent border-transparent shadow-none" : "bg-white border-slate-100 shadow-xs"}`}>
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={58}
-                  height={58}
+                  width={68}
+                  height={68}
                   priority
                   className="object-contain rounded-full"
                 />
               </div>
               {/* Desktop Logo (Hidden on mobile) */}
-              <div className="hidden md:flex bg-white rounded-full p-1 border border-slate-100 items-center justify-center shrink-0 shadow-xs">
+              <div className={`hidden md:flex rounded-full p-1 border items-center justify-center shrink-0 transition-all duration-300 ${isSolid ? "bg-transparent border-transparent shadow-none" : "bg-white border-slate-100 shadow-xs"}`}>
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={34}
-                  height={34}
+                  width={38}
+                  height={38}
                   priority
                   className="object-contain shrink-0 rounded-full"
                 />
