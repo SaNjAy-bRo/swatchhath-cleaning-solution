@@ -82,13 +82,15 @@ export default function InstagramReels() {
               className="relative aspect-[9/16] bg-slate-900 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 group border border-slate-200/60"
             >
               {reel.embedUrl ? (
-                <iframe
-                  src={`${reel.embedUrl.endsWith('/') ? reel.embedUrl : reel.embedUrl + '/'}embed/`}
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  scrolling="no"
-                  allow="encrypted-media"
-                />
+                <div className="w-full h-full relative overflow-hidden rounded-2xl">
+                  <iframe
+                    src={`${reel.embedUrl.endsWith('/') ? reel.embedUrl : reel.embedUrl + '/'}embed/`}
+                    className="absolute left-0 w-full h-[calc(100%+130px)] -top-[45px] border-0"
+                    allowFullScreen
+                    scrolling="no"
+                    allow="encrypted-media"
+                  />
+                </div>
               ) : (
                 <>
                   {/* Thumbnail Image */}
