@@ -10,8 +10,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden min-h-[70vh] flex items-center bg-[url('/images/hero-exterior-mobile.png')] md:bg-[url('/images/hero-exterior-desktop.png')] bg-cover bg-bottom hero-tuned-bg bg-no-repeat">
-      {/* Rich blue overlay (gradient from dark navy blue to transparent, showing the cartoon illustration) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#162659]/90 via-[#162659]/55 to-[#162659]/15 z-0" />
+      {/* Rich dark blue overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1633]/95 via-[#0d1633]/80 to-[#0d1633]/45 z-0" />
       
       {/* Decorative circles */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl z-0" />
@@ -25,12 +25,6 @@ export default function Hero() {
           
           {/* Text Content */}
           <div className="md:col-span-8 lg:col-span-7 flex flex-col items-center text-center sm:items-start sm:text-left justify-center space-y-6 max-w-xl">
-            {/* Brand pill */}
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white/90 px-4 py-1.5 rounded-full text-xs font-bold w-fit tracking-wider border border-white/10">
-              <Droplets className="h-3.5 w-3.5 text-secondary" />
-              <span>SWACHHATH CLEANING SOLUTION</span>
-            </div>
-
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
               Expert Deep Cleaning <br className="hidden sm:inline" />
               For <span className="text-secondary">Home & Business</span>

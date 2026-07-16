@@ -258,18 +258,18 @@ export const servicesList: ServiceDetail[] = [
     ]
   },
   {
-    slug: "temple-masjid-church-cleaning",
-    name: "Temple / Masjid / Church Cleaning",
+    slug: "temple-church-cleaning",
+    name: "Temple & Church Cleaning",
     category: "Commercial",
     tag: "Sacred Space Hygiene",
     iconName: "Heart",
-    image: "/images/services/temple-masjid-church-cleaning.png",
+    image: "/images/services/temple-church-cleaning.png",
     desc: "Dedicated large-scale hygiene services for holy spaces with regional respect and care.",
-    longDesc: "Holy spaces host mass gatherings, requiring top-tier sanitation. We provide specialized deep cleaning packages for temples, mosques, and churches, handled by a respectful local crew fluent in regional languages.",
-    whyItMatters: "Places of worship are barefoot zones. Deep washing of stone steps, vacuuming massive prayer carpets, and polishing brass fixtures maintains sacred hygiene and safety.",
+    longDesc: "Holy spaces host mass gatherings, requiring top-tier sanitation. We provide specialized deep cleaning packages for temples and churches, handled by a respectful local crew fluent in regional languages.",
+    whyItMatters: "Places of worship are barefoot zones. Deep washing of stone steps, sanctuary sanitization, and polishing brass fixtures maintains sacred hygiene and safety.",
     steps: [
-      { title: "Respectful Setup Planning", desc: "Coordinate with caretakers regarding rules, entry restrictions, and timing." },
-      { title: "Mass Carpet Vacuuming", desc: "Perform deep dust extraction from prayer carpets and runners." },
+      { title: "Respectful Setup Planning", desc: "Coordinate with caretakers regarding rules, sanctuary restrictions, and timing." },
+      { title: "Sanctuary Floor & Carpet Vacuuming", desc: "Perform deep dust extraction from hall carpets, altar carpets, and runners." },
       { title: "Floor Sanitization Wash", desc: "Run pressure jets and floor scrubbers on stone verandas and steps." },
       { title: "Brass & Metal Detailing", desc: "Clean and hand-polish large brass lamps and rails to a mirror finish." }
     ],
@@ -277,7 +277,7 @@ export const servicesList: ServiceDetail[] = [
       "Respectful, disciplined local crew speaking Kannada/Tulu/Konkani",
       "Special discounts and customized schedules to fit prayer timings",
       "Non-toxic, safe sanitizers used in barefoot areas",
-      "Experience cleaning 50+ religious and community spaces"
+      "Experience cleaning 30+ religious and community spaces"
     ]
   },
   {

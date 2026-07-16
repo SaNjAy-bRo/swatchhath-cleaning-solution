@@ -9,33 +9,38 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0 pb-6 border-b border-slate-800">
           
-          {/* Logo & Sub */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center space-x-2.5 text-white">
-              <Image
-                src="/images/logo.png"
-                alt="Swachhath Logo"
-                width={36}
-                height={36}
-                className="object-contain bg-white p-0.5 rounded-lg"
-              />
-              <span className="font-heading text-base font-extrabold tracking-tight">
-                SWACHHATH CLEANING SOLUTION
-              </span>
-            </div>
-            <p className="text-xs text-slate-500 mt-1.5 max-w-sm">
+          {/* Centered Logo & Description */}
+          <div className="flex flex-col items-center text-center w-full pb-6">
+            <Image
+              src="/images/logo.png"
+              alt="Swachhath Logo"
+              width={64}
+              height={64}
+              className="object-contain bg-white p-1 rounded-xl shadow-xs"
+            />
+            <p className="text-xs text-slate-500 mt-3.5 max-w-md">
               Providing professional deep cleaning, pressure washing, sump & tank sanitization, and solar plate maintenance since 2022.
             </p>
           </div>
+        </div>
 
-          {/* Core Info & Policies */}
-          <div className="flex flex-col items-center md:items-end text-center md:text-right space-y-2">
-            <span className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Operating Policy</span>
-            <p className="text-xs text-slate-400 max-w-sm">
-              Transportation charges apply separately on a location basis. We return calls/messages shortly or in the evening. Please cooperate.
+        {/* Info Area: Service Area & Operating Policy */}
+        <div className="grid md:grid-cols-2 gap-6 py-6 border-b border-slate-800 text-center md:text-left">
+          {/* Service Area */}
+          <div className="flex flex-col items-center md:items-start space-y-1.5">
+            <span className="text-[10px] font-black text-secondary tracking-widest uppercase">Service Area</span>
+            <p className="text-xs text-slate-300 font-extrabold tracking-wide">
+              Udupi • Kundapura • Mangalore • Karkala
             </p>
           </div>
 
+          {/* Operating Policy */}
+          <div className="flex flex-col items-center md:items-end md:text-right space-y-1.5">
+            <span className="text-[10px] font-black text-slate-500 tracking-widest uppercase">Operating Policy</span>
+            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+              Transportation charges apply separately on a location basis. We return calls/messages shortly or in the evening. Please cooperate.
+            </p>
+          </div>
         </div>
 
         {/* Bottom Bar */}

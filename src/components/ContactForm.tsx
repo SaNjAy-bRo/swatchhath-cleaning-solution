@@ -14,7 +14,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
     "Signboard Cleaning",
     "Floor Scrubbing & Rubbing",
     "Vacuum Cleaning",
-    "Temple / Masjid / Church Cleaning",
+    "Temple & Church Cleaning",
     "Resort & Homestay Cleaning",
     "Furniture Cleaning",
     "Other Services / Commercial Cleaning",
