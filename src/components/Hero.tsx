@@ -9,7 +9,10 @@ export default function Hero() {
   const phoneCallLink = `tel:${whatsappNumber}`;
 
   return (
-    <section className="relative overflow-hidden min-h-[70vh] sm:min-h-0 flex items-center bg-gradient-to-br from-[#162659] via-[#0f1d47] to-[#1d3568]">
+    <section className="relative overflow-hidden min-h-[70vh] sm:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-bottom md:bg-right-bottom">
+      {/* Rich blue overlay (gradient from dark navy blue to transparent, showing the cartoon illustration) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#162659]/90 via-[#162659]/55 to-[#162659]/15 z-0" />
+      
       {/* Decorative circles */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl z-0" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl z-0" />
@@ -17,7 +20,7 @@ export default function Hero() {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-24 z-10">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-28 z-10">
         <div className="grid md:grid-cols-12 gap-10 items-center">
           
           {/* Text Content */}
@@ -75,25 +78,6 @@ export default function Hero() {
               </a>
             </div>
           </div>
-
-          {/* Right Side — Cartoon Illustration Card */}
-          <div className="md:col-span-4 lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 p-2 backdrop-blur-xs">
-              {/* Desktop Image */}
-              <img
-                src="/images/hero-cartoon-desktop.png"
-                alt="Swachhath Cleaning Crew Eeco Van"
-                className="hidden md:block w-full h-auto object-cover rounded-xl"
-              />
-              {/* Mobile Image */}
-              <img
-                src="/images/hero-cartoon-mobile.png"
-                alt="Swachhath Cleaning Crew Eeco Van"
-                className="block md:hidden w-full h-auto object-cover rounded-xl"
-              />
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
