@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Star, ShieldCheck, Leaf, Phone, Droplets, MapPin } from "lucide-react";
 
 export default function Hero() {
@@ -8,8 +11,22 @@ export default function Hero() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const phoneCallLink = `tel:${whatsappNumber}`;
 
+  // Controller states for desktop tuning (Temporary)
+  const [bgSizePercent, setBgSizePercent] = useState(100); // Zoom level in %
+  const [bgPosX, setBgPosX] = useState(100); // Horizontal offset (100% is right side)
+  const [bgPosY, setBgPosY] = useState(100); // Vertical offset (100% is bottom side)
+  const [paddingY, setPaddingY] = useState(96); // Vertical padding of content in px
+  const [minHeight, setMinHeight] = useState(70); // Min height of section in vh
+
   return (
-    <section className="relative overflow-hidden min-h-[70vh] md:min-h-0 flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-cover bg-bottom md:bg-right-bottom">
+    <section 
+      className="relative overflow-hidden flex items-center bg-[url('/images/hero-cartoon-mobile.png')] md:bg-[url('/images/hero-cartoon-desktop.png')] bg-no-repeat"
+      style={{
+        minHeight: `${minHeight}vh`,
+        backgroundSize: `${bgSizePercent}%`,
+        backgroundPosition: `${bgPosX}% ${bgPosY}%`,
+      }}
+    >
       {/* Rich blue overlay (gradient from dark navy blue to transparent, showing the cartoon illustration) */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#162659]/90 via-[#162659]/55 to-[#162659]/15 z-0" />
       
@@ -20,7 +37,13 @@ export default function Hero() {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full py-16 sm:py-20 md:py-24 z-10">
+      <div 
+        className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full z-10"
+        style={{
+          paddingTop: `${paddingY}px`,
+          paddingBottom: `${paddingY}px`,
+        }}
+      >
         <div className="grid md:grid-cols-12 gap-10 items-center">
           
           {/* Text Content */}
@@ -77,6 +100,93 @@ export default function Hero() {
                 Call Us
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Background Controller UI (hidden on mobile, visible on desktop) */}
+      <div className="hidden md:block fixed bottom-6 left-6 z-50 bg-slate-900/95 text-white p-5 rounded-2xl border border-slate-700 shadow-2xl w-80 backdrop-blur-md font-sans">
+        <h4 className="text-sm font-bold border-b border-slate-700 pb-2 mb-3 text-secondary flex justify-between">
+          <span>BG Position & Size Tuner</span>
+          <span className="text-[10px] text-white/50">Temp Controller</span>
+        </h4>
+        
+        <div className="space-y-3.5 text-xs">
+          {/* Min Height Slider */}
+          <div className="space-y-1">
+            <div className="flex justify-between text-white/70">
+              <span>Section Min Height:</span>
+              <span className="font-mono text-secondary">{minHeight}vh</span>
+            </div>
+            <input 
+              type="range" min="40" max="100" value={minHeight} 
+              onChange={(e) => setMinHeight(Number(e.target.value))}
+              className="w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-secondary"
+            />
+          </div>
+
+          {/* Padding Y Slider */}
+          <div className="space-y-1">
+            <div className="flex justify-between text-white/70">
+              <span>Vertical Padding:</span>
+              <span className="font-mono text-secondary">{paddingY}px</span>
+            </div>
+            <input 
+              type="range" min="30" max="180" value={paddingY} 
+              onChange={(e) => setPaddingY(Number(e.target.value))}
+              className="w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-secondary"
+            />
+          </div>
+
+          {/* Zoom / BG Size Slider */}
+          <div className="space-y-1">
+            <div className="flex justify-between text-white/70">
+              <span>Zoom Background (Size %):</span>
+              <span className="font-mono text-secondary">{bgSizePercent}%</span>
+            </div>
+            <input 
+              type="range" min="30" max="300" value={bgSizePercent} 
+              onChange={(e) => setBgSizePercent(Number(e.target.value))}
+              className="w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-secondary"
+            />
+          </div>
+
+          {/* BG Position X Slider */}
+          <div className="space-y-1">
+            <div className="flex justify-between text-white/70">
+              <span>BG Position X (Horizontal):</span>
+              <span className="font-mono text-secondary">{bgPosX}%</span>
+            </div>
+            <input 
+              type="range" min="0" max="100" value={bgPosX} 
+              onChange={(e) => setBgPosX(Number(e.target.value))}
+              className="w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-secondary"
+            />
+          </div>
+
+          {/* BG Position Y Slider */}
+          <div className="space-y-1">
+            <div className="flex justify-between text-white/70">
+              <span>BG Position Y (Vertical):</span>
+              <span className="font-mono text-secondary">{bgPosY}%</span>
+            </div>
+            <input 
+              type="range" min="0" max="100" value={bgPosY} 
+              onChange={(e) => setBgPosY(Number(e.target.value))}
+              className="w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-secondary"
+            />
+          </div>
+
+          {/* Final Values Copy Block */}
+          <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800 space-y-1 text-[10px]">
+            <span className="text-secondary font-bold uppercase block tracking-wider">Tuned Settings Code:</span>
+            <code className="block font-mono text-[9px] text-white/80 select-all whitespace-pre bg-black/30 p-1.5 rounded border border-white/5 overflow-x-auto">
+{`backgroundSize: "${bgSizePercent}%"
+bgPosition: "${bgPosX}% ${bgPosY}%"
+minHeight: "${minHeight}vh"
+paddingY: "${paddingY}px"`}
+            </code>
+            <span className="text-[9px] text-white/40 block mt-1 text-center">Drag sliders to fit background, then copy this code and send it in chat!</span>
           </div>
         </div>
       </div>
