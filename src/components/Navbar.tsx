@@ -51,19 +51,46 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex items-center">
+        <div className="flex justify-between items-center h-24 md:h-20">
+          
+          {/* Mobile Left: Menu toggle button */}
+          <div className="flex md:hidden items-center justify-start w-12">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer shadow-3xs"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+
+          {/* Logo - Centered on Mobile, Left-aligned on Desktop */}
+          <div className="flex items-center justify-center md:justify-start flex-grow md:flex-grow-0">
             <Link href="/" className="flex items-center space-x-2.5">
-              <Image
-                src="/images/logo.png"
-                alt="Swachhath Cleaning Solution"
-                width={50}
-                height={50}
-                priority
-                className="object-contain shrink-0"
-              />
-              <div className="flex flex-col">
+              {/* Mobile Large Logo (Hidden on desktop) */}
+              <div className="md:hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="Swachhath Cleaning Solution"
+                  width={64}
+                  height={64}
+                  priority
+                  className="object-contain"
+                />
+              </div>
+              {/* Desktop Logo (Hidden on mobile) */}
+              <div className="hidden md:block">
+                <Image
+                  src="/images/logo.png"
+                  alt="Swachhath Cleaning Solution"
+                  width={50}
+                  height={50}
+                  priority
+                  className="object-contain shrink-0"
+                />
+              </div>
+              {/* Company name text (Hidden on mobile) */}
+              <div className="hidden md:flex flex-col">
                 <span className="font-heading font-black text-[16px] sm:text-[18px] text-primary leading-tight uppercase tracking-tight">
                   Swachhath
                 </span>
@@ -150,8 +177,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile phone icon & Menu toggle button */}
-          <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile Right: Phone Call Button */}
+          <div className="flex md:hidden items-center justify-end w-12">
             <a
               href={phoneCallLink}
               className="inline-flex items-center justify-center p-2 rounded-lg text-primary bg-primary-light border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer shadow-3xs"
@@ -159,14 +186,8 @@ export default function Navbar() {
             >
               <Phone className="h-5 w-5" />
             </a>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer shadow-3xs"
-              aria-label="Toggle Menu"
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
           </div>
+
         </div>
       </div>
 
