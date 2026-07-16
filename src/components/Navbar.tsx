@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        <div className="flex justify-between items-center h-24 md:h-20">
+        <div className="flex justify-between items-center h-28 md:h-20">
           
           {/* Mobile Left: Menu toggle button */}
           <div className="flex md:hidden items-center justify-start w-12">
@@ -72,8 +72,8 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={64}
-                  height={64}
+                  width={100}
+                  height={100}
                   priority
                   className="object-contain"
                 />
@@ -83,8 +83,8 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="Swachhath Cleaning Solution"
-                  width={50}
-                  height={50}
+                  width={58}
+                  height={58}
                   priority
                   className="object-contain shrink-0"
                 />
