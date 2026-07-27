@@ -5,6 +5,7 @@ import Process from "@/components/Process";
 import InstagramReels from "@/components/InstagramReels";
 import About from "@/components/About";
 import Feedback from "@/components/Feedback";
+import ServiceArea from "@/components/ServiceArea";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -34,6 +35,9 @@ export default function Home() {
 
         {/* Testimonials & Share Feedback Section */}
         <Feedback />
+
+        {/* Service Area Coverage & Schedule */}
+        <ServiceArea />
 
         {/* Quote Request Contact Form */}
         <ContactForm />

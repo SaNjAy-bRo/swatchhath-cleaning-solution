@@ -19,6 +19,8 @@ import {
   Activity, 
   Heart, 
   Building2,
+  Utensils,
+  Trees,
   Menu,
   X
 } from "lucide-react";
@@ -35,7 +37,9 @@ const iconMap: Record<string, any> = {
   Layers,
   Activity,
   Heart,
-  Building2
+  Building2,
+  Utensils,
+  Trees
 };
 
 export default function Navbar() {

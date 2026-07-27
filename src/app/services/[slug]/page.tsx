@@ -243,12 +243,16 @@ export default function ServicePage() {
               </div>
 
               {/* Local Notice */}
-              <div className="bg-secondary-light border border-secondary/15 p-4 rounded-xl space-y-1.5">
-                <span className="text-[11px] font-extrabold text-primary uppercase block tracking-wide">Coastal Karnataka Service Area</span>
-                <p className="text-[11px] text-slate-700 leading-normal font-medium">
-                  Transportation costs are calculated at actuals depending on distance. Share your location pin on WhatsApp for a fast, exact price.
-                </p>
-                <div className="text-[10px] text-slate-500 pt-1.5 border-t border-secondary/15 font-semibold italic">
+              <div className="bg-secondary-light border border-secondary/15 p-4 rounded-xl space-y-2">
+                <span className="text-[11px] font-extrabold text-primary uppercase block tracking-wide">Coastal Karnataka Service Schedule</span>
+                <div className="text-[11px] text-slate-700 leading-normal space-y-1 font-medium">
+                  <p><strong className="text-emerald-700 font-bold">Daily Regular:</strong> Udupi, Brahmavara, Kapu</p>
+                  <p><strong className="text-amber-700 font-bold">On Appointment:</strong> Karkala, Kundapura, Hebri, Shirva, Padubidre, Mangalore</p>
+                  <p className="text-[10px] text-slate-500 pt-1 border-t border-secondary/15">
+                    Transportation costs are calculated at actuals depending on location. Share your location pin on WhatsApp for exact slot & quote.
+                  </p>
+                </div>
+                <div className="text-[10px] text-slate-500 font-semibold italic">
                   ನಿಮ್ಮ ಲೊಕೇಶನ್ ಶೇರ್ ಮಾಡಿ ನಿಖರವಾದ ದರವನ್ನು ತಿಳಿದುಕೊಳ್ಳಿ.
                 </div>
               </div>

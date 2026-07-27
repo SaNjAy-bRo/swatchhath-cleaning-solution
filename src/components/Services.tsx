@@ -15,6 +15,8 @@ import {
   Activity,
   Heart,
   Building2,
+  Utensils,
+  Trees,
   ArrowRight
 } from "lucide-react";
 
@@ -29,7 +31,9 @@ const iconMap: Record<string, any> = {
   Layers,
   Activity,
   Heart,
-  Building2
+  Building2,
+  Utensils,
+  Trees
 };
 
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {

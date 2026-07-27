@@ -5,18 +5,22 @@ import { Send, MapPin, CheckCircle2, MessageSquare, Phone } from "lucide-react";
 
 export default function ContactForm({ defaultService = "" }: { defaultService?: string }) {
   const servicesList = [
-    "High Pressure Wash Cleaning",
-    "Flat & House Cleaning",
-    "Overhead Tank & Sump Cleaning",
+    "Solar Sales & Services",
+    "Solar Repair & Tube Replacement",
+    "Tank & Sump Cleaning",
+    "Solar Panel & Tube Cleaning",
     "Basic & Deep Cleaning",
-    "Solar tubes and Panel Cleaning",
-    "Solar coil fitting & Changing tube",
-    "Signboard Cleaning",
+    "Flat & House Cleaning",
+    "Homestay, Resort & Commercial Cleaning",
+    "High Pressure Wash Cleaning",
+    "Facade & Signboard Cleaning",
+    "Kitchen Deck Cleaning",
+    "Worship Space Cleaning (Temple & Church)",
+    "Grass & Tree Cutting",
+    "Well Cleaning",
     "Floor Scrubbing & Rubbing",
-    "Vacuum Cleaning",
-    "Temple & Church Cleaning",
-    "Resort & Homestay Cleaning",
-    "Furniture Cleaning",
+    "Sofa Set & Vacuum Cleaning",
+    "Furniture & Cot Cleaning & Polishing",
     "Other Services / Commercial Cleaning",
   ];
 
@@ -194,6 +198,10 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
                         className="w-full text-sm border border-slate-200 rounded-xl p-3 pl-9 bg-white focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
                       />
                       <MapPin className="absolute left-3 top-3.5 h-4.5 w-4.5 text-slate-400" />
+                    </div>
+                    <div className="mt-2 text-[11px] bg-slate-50 border border-slate-200/80 rounded-lg p-2.5 text-slate-600 space-y-0.5">
+                      <p><strong className="text-emerald-600">Daily Service:</strong> Udupi, Brahmavara, Kapu</p>
+                      <p><strong className="text-amber-600">On Appointment:</strong> Karkala, Kundapura, Hebri, Shirva, Padubidre, Mangalore</p>
                     </div>
                   </div>
                 </div>

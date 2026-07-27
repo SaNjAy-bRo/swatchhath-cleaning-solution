@@ -28,10 +28,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 gap-6 py-6 border-b border-slate-800 text-center md:text-left">
           {/* Service Area */}
           <div className="flex flex-col items-center md:items-start space-y-1.5">
-            <span className="text-[10px] font-black text-secondary tracking-widest uppercase">Service Area</span>
-            <p className="text-xs text-slate-300 font-extrabold tracking-wide">
-              Udupi • Kundapura • Mangalore • Karkala
-            </p>
+            <span className="text-[10px] font-black text-secondary tracking-widest uppercase">Service Area & Schedule</span>
+            <div className="text-xs text-slate-300 space-y-1">
+              <p>
+                <strong className="text-emerald-400 font-bold">Daily Regular Basis:</strong> Udupi, Brahmavara, Kapu
+              </p>
+              <p>
+                <strong className="text-amber-400 font-bold">On Appointment Basis:</strong> Karkala, Kundapura, Hebri, Shirva, Padubidre, Mangalore
+              </p>
+            </div>
           </div>
 
           {/* Operating Policy */}

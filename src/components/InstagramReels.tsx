@@ -37,14 +37,20 @@ export default function InstagramReels() {
     {
       id: "reel-3",
       title: "Overhead Water Tank Sanitization",
-      embedUrl: "https://www.instagram.com/reel/DX9XCKqTwge/", // Paste your Instagram Reel link here
+      embedUrl: "https://www.instagram.com/reel/DX9XCKqTwge/",
       thumbnail: "/images/services/overhead-tank-sump-cleaning.png"
+    },
+    {
+      id: "reel-4",
+      title: "Solar & Professional Cleaning Work",
+      embedUrl: "https://www.instagram.com/reel/DbIrEm7TdiI/",
+      thumbnail: "/images/services/solar-sales-services.png"
     }
   ];
 
   return (
     <section className="py-16 sm:py-20 bg-slate-50 border-t border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -75,7 +81,7 @@ export default function InstagramReels() {
         </div>
 
         {/* Reels Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
           {reels.map((reel, idx) => (
             <div 
               key={reel.id}
