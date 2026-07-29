@@ -24,14 +24,14 @@ export default function Home() {
         {/* Dynamic Services Tabbed Section */}
         <Services />
 
+        {/* About Section with Instagram Reel & Minimal Info */}
+        <About />
+
         {/* How It Works Workflow Section */}
         <Process />
 
         {/* Instagram Reels & Video Showcase Section */}
         <InstagramReels />
-
-        {/* Why Choose Us Info Grid */}
-        <About />
 
         {/* Testimonials & Share Feedback Section */}
         <Feedback />
