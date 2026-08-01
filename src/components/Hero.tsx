@@ -1,7 +1,7 @@
 import { Star, ShieldCheck, Leaf, Phone, Droplets, MapPin } from "lucide-react";
 
 export default function Hero() {
-  const whatsappNumber = "+919481977717";
+  const whatsappNumber = "+917760771351";
   const whatsappMessage = encodeURIComponent(
     "Hi Swachhath Cleaning Solution, I would like to book a cleaning service."
   );

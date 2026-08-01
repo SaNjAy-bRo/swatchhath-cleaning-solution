@@ -65,7 +65,7 @@ export default function Navbar() {
 
   const isSolid = !isHomepage || isScrolled || mobileMenuOpen;
 
-  const whatsappNumber = "+919481977717";
+  const whatsappNumber = "+917760771351";
   const whatsappMessage = encodeURIComponent(
     "Hi Swachhath Cleaning Solution, I would like to get a quote for cleaning services."
   );

@@ -39,7 +39,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
   // Dynamically resolve the icon component from lucide-react
   const IconComponent = (Icons as any)[service.iconName] || Sparkles;
 
-  const whatsappNumber = "+919481977717";
+  const whatsappNumber = "+917760771351";
   const whatsappMessage = encodeURIComponent(
     `Hi Swachhath Cleaning Solution, I want to book the "${service.name}" service. Please share pricing.`
   );

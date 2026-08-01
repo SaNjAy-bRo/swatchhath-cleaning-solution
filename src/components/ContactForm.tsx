@@ -39,7 +39,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const whatsappNumber = "+919481977717";
+  const whatsappNumber = "+917760771351";
   const whatsappMessage = encodeURIComponent(
     `Hi Swachhath Cleaning Solution, my name is ${name || "Client"}. I want to inquire about "${service || "Cleaning Service"}". My location is ${location || "Karnataka"}.`
   );
