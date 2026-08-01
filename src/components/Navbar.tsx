@@ -186,7 +186,7 @@ export default function Navbar() {
               className={`flex items-center text-sm font-bold transition-colors py-2 px-3 rounded-lg ${isSolid ? "text-slate-700 hover:text-primary hover:bg-slate-50" : "text-white hover:text-white hover:bg-white/10"}`}
             >
               <Phone className={`h-4 w-4 mr-2 transition-colors ${isSolid ? "text-primary" : "text-white"}`} />
-              +91 94819 77717
+              +91 77607 71351
             </a>
             <a
               href={whatsappLink}

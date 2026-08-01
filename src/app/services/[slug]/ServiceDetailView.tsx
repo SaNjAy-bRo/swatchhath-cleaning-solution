@@ -225,7 +225,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
                     className="flex items-center justify-center w-full px-4 py-2 text-xs font-extrabold bg-white text-primary rounded-lg hover:bg-slate-50 transition-colors"
                   >
                     <Phone className="h-3.5 w-3.5 mr-1.5" />
-                    Call +91 94819 77717
+                    Call +91 77607 71351
                   </a>
                   <a
                     href={whatsappLink}

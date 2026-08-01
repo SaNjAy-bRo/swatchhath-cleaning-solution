@@ -109,7 +109,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
             <div className="space-y-3 pt-2 text-sm text-slate-600 border-t border-slate-100">
               <div className="flex items-center space-x-3">
                 <span className="font-bold text-slate-800 min-w-[120px]">Phone & WhatsApp:</span>
-                <a href={`tel:${whatsappNumber}`} className="hover:text-primary font-bold text-primary transition-colors">+91 94819 77717</a>
+                <a href={`tel:${whatsappNumber}`} className="hover:text-primary font-bold text-primary transition-colors">+91 77607 71351</a>
               </div>
               <div className="flex items-center space-x-3">
                 <span className="font-bold text-slate-800 min-w-[120px]">Operational:</span>
