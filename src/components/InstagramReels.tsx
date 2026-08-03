@@ -26,25 +26,25 @@ export default function InstagramReels() {
       id: "reel-1",
       title: "Deep House Cleaning Transformation",
       embedUrl: "https://www.instagram.com/reel/DZFjAwiIg-8/", // Paste your Instagram Reel link here
-      thumbnail: "/images/services/flat-house-cleaning.png"
+      thumbnail: "/images/services/flat-house-cleaning.jpg"
     },
     {
       id: "reel-2",
       title: "High Pressure Driveway Wash",
       embedUrl: "https://www.instagram.com/reel/DanZxkizQ-l/", // Paste your Instagram Reel link here
-      thumbnail: "/images/hero-exterior-desktop.png"
+      thumbnail: "/images/swachhath-car.jpg"
     },
     {
       id: "reel-3",
       title: "Overhead Water Tank Sanitization",
       embedUrl: "https://www.instagram.com/reel/DX9XCKqTwge/",
-      thumbnail: "/images/services/overhead-tank-sump-cleaning.png"
+      thumbnail: "/images/services/overhead-tank-sump-cleaning.jpg"
     },
     {
       id: "reel-4",
       title: "Solar & Professional Cleaning Work",
       embedUrl: "https://www.instagram.com/reel/DbIrEm7TdiI/",
-      thumbnail: "/images/services/solar-sales-services.png"
+      thumbnail: "/images/services/solar-sales-services.jpg"
     }
   ];
 
