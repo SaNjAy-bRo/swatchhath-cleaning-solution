@@ -380,7 +380,7 @@ export const servicesList: ServiceDetail[] = [
     category: "Residential",
     tag: "Wood & Cushion Renewal",
     iconName: "Armchair",
-    image: "/images/services/furniture-cleaning.png",
+    image: "/images/services/furniture-cleaning.jpg",
     desc: "Polishing wooden furniture, cots, tables, cabinets, and deep cleaning chairs & mattresses.",
     longDesc: "Protect your expensive furniture investments from mold, wood dust, and surface dullness. We provide dedicated polishing for wooden cots, tables, cabinets, and doors, alongside sanitization of mattresses and dining chairs.",
     whyItMatters: "Coastal humidity causes teak and rosewood to develop white mold and crack. Professional wax-polishing seals the wood, preventing moisture damage and restoring rich gloss.",
