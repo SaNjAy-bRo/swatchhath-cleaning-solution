@@ -35,7 +35,7 @@ export const servicesList: ServiceDetail[] = [
     category: "Specialized",
     tag: "Authorized Sales & Setup",
     iconName: "Sun",
-    image: "/images/services/solar-sales-services.png",
+    image: "/images/services/solar-sales-services.jpg",
     desc: "Supply, sales, installation assistance, and end-to-end maintenance of residential & commercial solar systems.",
     longDesc: "We provide complete solar energy system sales, consultation, new unit installations, and routine maintenance packages. Whether upgrading your home water heating setup or configuring rooftop solar PV panels, our expert team delivers genuine parts and reliable regional service.",
     whyItMatters: "Transitioning to solar energy dramatically lowers utility costs. Expert sales advice combined with local service guarantees optimal system capacity, long life, and quick maintenance support.",
