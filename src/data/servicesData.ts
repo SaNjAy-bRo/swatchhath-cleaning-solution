@@ -58,7 +58,7 @@ export const servicesList: ServiceDetail[] = [
     category: "Specialized",
     tag: "Solar Heating Repair",
     iconName: "Wrench",
-    image: "/images/services/solar-coil-fitting-tube-changing.png",
+    image: "/images/services/solar-coil-fitting-tube-changing.jpg",
     desc: "Fixing loose heating coils, leak repair, and replacement of damaged solar glass tubes.",
     longDesc: "We provide replacement of damaged solar water heater glass tubes, leak fixes for hot water coils, and descaling flushes to restore your solar water heating system back to peak performance at a fraction of the cost of a new unit.",
     whyItMatters: "Cracked vacuum tubes cause hot water leaks and reduce system heating. Replacing individual parts early saves money and prevents damage to the header tank.",
