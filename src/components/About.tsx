@@ -113,7 +113,7 @@ export default function About() {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-bold text-white leading-tight flex items-center gap-1">
-                        @swachhath_cleaning
+                        @swachhath_cleaning_udupi
                         <CheckCircle2 className="h-3 w-3 text-sky-400 inline" />
                       </span>
                       <span className="text-[10px] text-slate-400 font-medium">Official Reel Showcase</span>

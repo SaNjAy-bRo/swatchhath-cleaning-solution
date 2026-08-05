@@ -1,6 +1,7 @@
 "use client";
 
-import { Play } from "lucide-react";
+import Image from "next/image";
+import { Play, Film, ExternalLink } from "lucide-react";
 
 const InstagramIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
   <svg 
@@ -69,13 +70,13 @@ export default function InstagramReels() {
           
           <div className="flex justify-center shrink-0">
             <a
-              href="https://www.instagram.com/swachhath_cleaning_solution"
+              href="https://www.instagram.com/swachhath_cleaning_udupi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-5 py-3 text-sm font-extrabold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all duration-300 shadow-sm hover:shadow"
             >
-              <InstagramIcon className="h-4 w-4 mr-2" />
-              Follow @Swachhath
+              <InstagramIcon className="h-4 w-4 mr-2 text-rose-400" />
+              Follow @swachhath_cleaning_udupi
             </a>
           </div>
         </div>
@@ -83,61 +84,62 @@ export default function InstagramReels() {
         {/* Reels Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
           {reels.map((reel, idx) => (
-            <div 
+            <div
               key={reel.id}
-              className="relative aspect-[9/16] bg-slate-900 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 group border border-slate-200/60"
+              className="group relative bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
-              {reel.embedUrl ? (
-                <div className="w-full h-full relative overflow-hidden rounded-2xl">
-                  <iframe
-                    src={`${reel.embedUrl.endsWith('/') ? reel.embedUrl : reel.embedUrl + '/'}embed/`}
-                    className="absolute left-0 w-full h-[calc(100%+130px)] -top-[45px] border-0"
-                    allowFullScreen
-                    scrolling="no"
-                    allow="encrypted-media"
-                  />
+              {/* Media Container */}
+              <div className="relative aspect-[9/16] w-full bg-slate-950 overflow-hidden">
+                {/* Thumbnail Image */}
+                <Image
+                  src={reel.thumbnail}
+                  alt={reel.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                />
+
+                {/* Dark Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-black text-white bg-slate-900/80 backdrop-blur-md border border-white/10 uppercase tracking-widest">
+                    <Film className="h-3 w-3 mr-1 text-secondary" />
+                    Reel {idx + 1}
+                  </span>
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-900/80 backdrop-blur-md text-white border border-white/10">
+                    <InstagramIcon className="h-3.5 w-3.5" />
+                  </span>
                 </div>
-              ) : (
-                <>
-                  {/* Thumbnail Image */}
-                  <img
-                    src={reel.thumbnail}
-                    alt={reel.title}
-                    className="w-full h-full object-cover opacity-65 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  
-                  {/* Dark gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
-                  
-                  {/* Play Button Indicator */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 group-hover:scale-110 group-hover:bg-primary group-hover:border-primary transition-all duration-300 z-20">
-                    <Play className="h-5 w-5 text-white fill-white ml-0.5" />
+
+                {/* Play Button Icon Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="w-14 h-14 rounded-full bg-rose-600/90 text-white flex items-center justify-center shadow-lg shadow-rose-600/30 group-hover:scale-110 transition-transform duration-300 border border-white/20">
+                    <Play className="h-6 w-6 fill-current ml-0.5" />
                   </div>
-                  
-                  {/* Info Card Content */}
-                  <div className="absolute bottom-0 inset-x-0 p-6 z-20 space-y-1.5">
-                    <span className="text-[10px] font-black text-secondary uppercase tracking-wider flex items-center gap-1">
-                      <InstagramIcon className="h-3.5 w-3.5" />
-                      Reel #{idx + 1}
-                    </span>
-                    <h4 className="text-sm font-extrabold text-white leading-tight">
-                      {reel.title}
-                    </h4>
-                    <p className="text-[10px] text-slate-400 font-bold tracking-wide">
-                      Click to watch on Instagram
-                    </p>
+                </div>
+
+                {/* Bottom Content inside Thumbnail */}
+                <div className="absolute bottom-3 left-3 right-3 z-10">
+                  <h3 className="font-heading text-sm font-black text-white leading-snug drop-shadow-xs line-clamp-2">
+                    {reel.title}
+                  </h3>
+                  <div className="flex items-center text-[11px] font-bold text-rose-300 mt-1.5 space-x-1">
+                    <ExternalLink className="h-3 w-3" />
+                    <span>Watch on Instagram</span>
                   </div>
-                  
-                  {/* Link Trigger overlay */}
-                  <a
-                    href="https://www.instagram.com/swachhath_cleaning_solution"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 z-30 cursor-pointer"
-                    aria-label={`Watch ${reel.title} on Instagram`}
-                  />
-                </>
-              )}
+                </div>
+
+                {/* Direct Link to Instagram Profile / Reel */}
+                <a
+                  href={reel.embedUrl || "https://www.instagram.com/swachhath_cleaning_udupi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-30 cursor-pointer"
+                  aria-label={`Watch ${reel.title} on Instagram`}
+                />
+              </div>
             </div>
           ))}
         </div>
