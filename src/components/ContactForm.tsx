@@ -47,28 +47,34 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !phone || !service) return;
+    if (!name || !phone || !service || !location) return;
 
     setLoading(true);
+
+    const formattedMessage = encodeURIComponent(
+      `*Swachhath Cleaning Solution - New Quote Request*\n\n` +
+      `👤 *Name:* ${name.trim()}\n` +
+      `📞 *Phone:* ${phone.trim()}\n` +
+      `🧹 *Service:* ${service}\n` +
+      `📍 *Location:* ${location.trim()}\n` +
+      (message.trim() ? `📝 *Requirements:* ${message.trim()}\n` : "") +
+      `\n_Sent from Swachhath Website Quote Form_`
+    );
+
+    const targetUrl = `https://wa.me/917760771351?text=${formattedMessage}`;
+
     try {
-      const res = await fetch("/api/contact", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, service, location, message }),
       });
-
-      if (res.ok) {
-        setSubmitted(true);
-        setName("");
-        setPhone("");
-        setService("");
-        setLocation("");
-        setMessage("");
-      }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Submission log error:", error);
     } finally {
       setLoading(false);
+      setSubmitted(true);
+      window.open(targetUrl, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -222,10 +228,10 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-extrabold text-white bg-primary hover:bg-primary-hover rounded-xl shadow-md shadow-primary/10 cursor-pointer disabled:opacity-50 transition-all"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-md shadow-emerald-600/20 cursor-pointer disabled:opacity-50 transition-all"
                   >
                     <Send className="h-4.5 w-4.5 mr-2" />
-                    {loading ? "Submitting..." : "Send Quote Request"}
+                    {loading ? "Opening WhatsApp..." : "Send Quote Request on WhatsApp"}
                   </button>
                 </div>
               </form>
